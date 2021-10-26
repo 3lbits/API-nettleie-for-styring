@@ -1,0 +1,98 @@
+{
+  "gridTariffCollections": [
+    {
+      "gridTariff": {
+        "tariffType": {
+          "tariffKey": "power_ls_dn",
+          "product": "AA EL 12345",
+          "companyName": "Nettselskap 4 AS",
+          "companyOrgNo": "900000003",
+          "title": "Nettleie lavspent dn",
+          "consumptionFlag": true,
+          "fixedPriceConfiguration": {
+            "basis": "fixed",
+            "maxhoursPerDay": null,
+            "daysPerMonth": null,
+            "allDaysPerMonth": null,
+            "maxhoursPerMonth": null,
+            "months": null
+          },
+          "powerPriceConfiguration": {
+            "reactivePowerPricing": true,
+            "powerFactorPercentage": 50.0000
+          },
+          "resolution": 60,
+          "description": "Tariff for low voltage connection in distribution grid"
+        },
+        "tariffPrice": {
+          "priceInfo": [
+            {
+              "startTime": "2021-09-17T00:00:00+02:00",
+              "expiredAt": "2021-09-17T01:00:00+02:00",
+              "hoursShortName": "00-01",
+              "season": "summer",
+              "publicHoliday": false,
+              "fixedPrices": {
+                "priceLevel": [
+                  {
+                    "levelId": 1,
+                    "levelValueMin": null,
+                    "levelValueMax": null,
+                    "nextLevelIdDown": null,
+                    "nextLevelIdUp": null,
+                    "levelValueUnitOfMeasure": null,
+                    "monthlyTotal": 425.0000,
+                    "monthlyTotalUnitOfMeasure": "kr/month",
+                    "levelInfo": "Fixed price component for Nettleie lavspent DS",
+                    "total": 0.5902,
+                    "fixedExTaxes": 0.4721,
+                    "taxes": 0.1181,
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/hour"
+                  }
+                ]
+              },
+              "powerPrices": {
+                "priceLevel": [
+                  {
+                    "levelId": 1,
+                    "levelValueMin": null,
+                    "levelValueMax": null,
+                    "nextLevelIdDown": null,
+                    "nextLevelIdUp": null,
+                    "levelValueUnitOfMeasure": null,
+                    "monthlyActivePowerTotal": 27.5000,
+                    "monthlyReactivePowerTotal": 13.2625,
+                    "monthlyTotalUnitOfMeasure": "kr/kW/month",
+                    "levelInfo": "Power price component for Nettleie lavspent DS",
+                    "activeTotal": 0.0381,
+                    "activePowerExTaxes": 0.0304,
+                    "activeTaxes": 0.0077,
+                    "reactiveTotal": 0.0184,
+                    "reactivePowerExTaxesfixedExTaxes": 0.0147,
+                    "reactiveTaxes": 0.0037,
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/kW/month"
+                  }
+                ]
+              },
+              "variablePrices": {
+                "energyPrice": {
+                  "total": 0.2573,
+                  "energyExTaxes": 0.0390,
+                  "taxes": 0.2183,
+                  "level": "CHEAP",
+                  "currency": "NOK",
+                  "monetaryUnitOfMeasure": "kr/kWh"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "meteringPointIds": [
+        "707057500000000007","707057500000000008","707057500000000009"
+      ]
+    }
+  ]
+}
