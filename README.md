@@ -1,31 +1,34 @@
 # DIGIN Nettariff API <br> Spesifikasjon
-
+<br/>
+NB! Dette er foreløpig versjon som kan bli endret etter innspill fra aktørene i bransjen.
+<br/>
 ## Dokumentversjoner
+<br/>
 |     Dato    |     Versjon    |     Endring    |
 |-------------|----------------|----------------|
 |  27.10.21   |        0.8     |       Init     |
 |             |                |                |
 |             |                |                |
-
-
+<br/>
+<br/>
 ## 1. Bakgrunn
 DIGINprosjektet 'Nettariff API' jobber med utvikling av en standard for deling av nettariffdata med brukere og tredjepartsaktører i kraftsystemet. Det er ikke innenfor prosjektets mandat å standardisere hvilke nettariffmodeller som skal benyttes.
 <br/>
-Hensikten med APIet er å støtte styring ved hjelp av smarthusteknologi og dermed stimulere til økt utnyttelse av fleksibilitet fra sluttbrukere. APIet er ikke ment å brukes til å få et korrekt historsik datagrunnlag for sluttbrukeres nettariff.
+Hensikten med APIet er å støtte styring ved hjelp av smarthusteknologi og dermed stimulere til økt utnyttelse av fleksibilitet fra sluttbrukere. APIet er ikke ment å brukes til å få et korrekt historisk datagrunnlag for sluttbrukeres nettariff.
 <br/>
-Dette betyr for eksempel at APIet leverer ut et GridTariff-objekt med kobling mellom en tariff og et målepunkt som er korrekt på tidspunktet for funksjonskallet. Hvis tidsperioden i går lenger tilbake enn startdato for målepunktets kontrakt, så gjenspeiles ikke dette i APIet.
+Dette betyr for eksempel at APIet leverer ut et GridTariff-objekt med kobling mellom en tariff og et målepunkt som er korrekt på tidspunktet for funksjonskallet. Hvis tidsperioden går lenger tilbake enn startdato for målepunktets kontrakt, så gjenspeiles ikke dette i APIet.
 <br/>
 Altså er prishistorikken i responsen koblet til tariffen, ikke målepunktet.
 <br/>
 Prosjektet leverer standardiserte skjema, med tilhørende dokumentasjon, for utveksling av nettariffdata. Legg merke til at det er opp til det enkelte nettselskap hvordan APIet skal implementeres, så prosjektet leverer ikke programvare for implementasjon.
 <br/>
 ## 2. Hensikt med dette dokumentet
-Dokunmentasjon av beslutninger tatt i DIGINs prosjektgruppe for å lage et standard API for utveksling av Nettariff data for styring/smarthus. 
+Dokumentasjon av beslutninger tatt i DIGINs prosjektgruppe for å lage et standard API for utveksling av Nettariff data for styring/smarthus. 
 
 ## 3. Definisjoner
-API - Application programing interface
+API - Application programming interface
 <br/>
-OpenAPI - Standard for API spesifikasjoner, se referanser.
+OpenAPI - Standard for API-spesifikasjoner, se referanser.
 <br/>
 Konsument/Klient - En applikasjon som konsumerer data fra et API. I denne sammenheng, typisk en 3. partsleverandør som skal hente nettariff data fra en eller flere nettselskap.
 <br/>
@@ -46,24 +49,24 @@ Følgende versjoner finnes av DIGIN Nettariff API spesifikasjonen.
 |      Versjon     |      Type           |      Beskrivelse                            |      Kommentar        |
 |------------------|---------------------|---------------------------------------------|-----------------------|
 |     1.0          |     Offisiell       |     Offisiell versjon som skal implementeres|  Ikke utgitt          |
-|     0.9          |     Arbeid          |     Arbeids versjon etter innspill          |  Ikke utgitt          |
+|     0.9          |     Arbeid          |     Arbeidsversjon etter innspill           |  Ikke utgitt          |
 |     0.8          |     Arbeid          |     Versjon for innspill fra aktører        |  Publisert 27.10.2021 |
-|     0.7          |     Arbeid          |     Arbeids versjon                         |  Skal ikke publiseres |
+|     0.7          |     Arbeid          |     Arbeidsversjon                          |  Skal ikke publiseres |
 
-## 5. Hva består spesifikasjonen av.
-Spesifikasjonen er opprettet ved bruk av standarden OpenAPI, https://www.openapis.org/
+## 5. Hva består spesifikasjonen av
+Spesifikasjonen er opprettet ved bruk av standarden OpenAPI, https://www.openapis.org/.
 <br/>
 Spesifikasjonen består av 2 json filer.
 <br/>
 <br/>
 DiginGridTariffAPI.v0_8.json
 <br/>
-Dette er OpenAPI spesifikasjonsfilen. Denne inneholder metoder, skjema definisjoner.
+Dette er OpenAPI spesifikasjonsfilen. Denne inneholder metoder og skjemadefinisjoner.
 <br/>
 <br/>
 gridtariffapi.v0_8.common.schema.json
 <br/>
-Inneholder definisjoner for input og output objekter brukt av metoder.
+Inneholder definisjoner for input- og outputobjekter brukt av metoder.
 <br/>
 <br/>
 OpenApi json filer kan vises som SWAGGER dokumentasjon. En måte å gjøre dette er å benytte Microsoft Visual Studio Code (gratis).
@@ -72,9 +75,9 @@ Importer OpenApi utvidelsen.
 <br/>
 Åpne begge json filene i Visual Studio Code.
 <br/>
-Velge utvidelsen OpenAPI (Rød sirkel rundt) og trykke på knappen "Show Preview using default render" (Rød sirkel rundt)
+Velg utvidelsen OpenAPI (Rød sirkel rundt) og trykk på knappen "Show Preview using default render" (Rød sirkel rundt)
 <br/>
-Dette vill vise SWAGGER dokumentasjon som vist i bildet under.
+Dette vil vise SWAGGER-dokumentasjon som vist i bildet under.
 <br/>
 ![image](https://user-images.githubusercontent.com/92018405/137330959-ff522cbb-87ee-41b1-9393-f683b0b21964.png)
 
@@ -90,7 +93,7 @@ OpenAPI, https://www.openapis.org/, nevner flere verktøy som kan benyttes til d
 <br/>
 Hvis en bruker Microsoft Visual Studio kan en generere en klient.
 <br/>
-Dette gjøres i Visual Studio ved å legge til en "Service Reference", velge så OpenAPI og så velge filen DiginGridTariffAPI.v0_8.json.
+Dette gjøres i Visual Studio ved å legge til en "Service Reference", velge OpenAPI og så velge filen DiginGridTariffAPI.v0_8.json.
 <br/>
 Merk at filene DiginGridTariffAPI.v0_8.json og gridtariffapi.v0_8.common.schema.json må være i samme mappe.
 <br/>
@@ -102,13 +105,14 @@ https://github.com/3lvia/grid-tariff-api
 <br/>
 I første versjon av APIet er det kun PULL som støttes, med anbefalt kallfrekvens på én gang per døgn. PUSH vurderes støttet i fremtidige versjoner!
 <br/>
-[image](https://user-images.githubusercontent.com/67076443/138090808-99e1e13e-f54d-4166-a437-5872af67a621.png)
+<br/>
+![image](https://user-images.githubusercontent.com/67076443/138090808-99e1e13e-f54d-4166-a437-5872af67a621.png)
 
   
 ## 7. Sikkerhet
 Implementasjon hos nettselskapene eller deres leverandører kan bli "hostet" flere steder og på forskjellige måter.
 <br/>
-Det er 3 store sky løsninger, Microsoft Azure, Google Cload, Amazon Web Services.
+Det er 3 store skyløsninger: Microsoft Azure, Google Cloud, Amazon Web Services.
 <br/>
 Samt nettselskapene eller leverandørene kan "hoste" implementasjonen på lokale "on prem" web servere.
 <br/>
