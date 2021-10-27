@@ -150,7 +150,7 @@ Fra og med 01.01.2022 endres kravene og i praksis gjelder følgende:
 <br/>
 Fastledd:
 <ul>
-  <li>Fastleddet skal differensieres etter kundens etterspørsel etter kapasitet/effekt og vil dermed variere for kunder med årsforbruk under 100.000 kWh</li>
+  <li>Fastleddet skal differensieres etter kundens etterspørsel etter kapasitet/effekt og vil dermed variere for kunder med årsforbruk under 100.000 kWh.</li>
   <br/>
   <li>I praksis vil de fleste tariffene baseres på makstime(r) pr dag eller måned, eller være sikringsbasert.</li>
   <br/>
@@ -161,7 +161,7 @@ Fastledd:
 <br/>
 Effektledd:
 <ul>
-  <li>Effektledd er kun tillatt for bedriftskunder med årsforbruk over 100.000 kWh</li>
+  <li>Effektledd er kun tillatt for bedriftskunder med årsforbruk over 100.000 kWh.</li>
 </ul>
 <br/>
 <br/>
