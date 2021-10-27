@@ -69,7 +69,7 @@
                     "activePowerExTaxes": 0.0304,
                     "activeTaxes": 0.0077,
                     "reactiveTotal": 0.0184,
-                    "reactivePowerExTaxesfixedExTaxes": 0.0147,
+                    "reactivePowerExTaxes": 0.0147,
                     "reactiveTaxes": 0.0037,
                     "currency": "NOK",
                     "monetaryUnitOfMeasure": "kr/kW/month"
