@@ -104,8 +104,6 @@ https://github.com/3lvia/grid-tariff-api
 I første versjon av APIet er det kun PULL som støttes, med anbefalt kallfrekvens på én gang per døgn. PUSH vurderes støttet i fremtidige versjoner!
 <br/>
 <br/>
-![image](https://user-images.githubusercontent.com/67076443/138090808-99e1e13e-f54d-4166-a437-5872af67a621.png)
-
   
 ## 7. Sikkerhet
 Implementasjon hos nettselskapene eller deres leverandører kan bli "hostet" flere steder og på forskjellige måter.
