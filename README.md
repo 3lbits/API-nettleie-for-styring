@@ -70,8 +70,7 @@ OpenApi json filer kan vises som SWAGGER dokumentasjon. En måte å gjøre dette
 <br/>
 Importer OpenApi utvidelsen. 
 <br/>
-Ã
-pne begge json filene i Visual Studio Code.
+Åpne begge json filene i Visual Studio Code.
 <br/>
 Velge utvidelsen OpenAPI (Rød sirkel rundt) og trykke på knappen "Show Preview using default render" (Rød sirkel rundt)
 <br/>
@@ -101,7 +100,7 @@ Det finnes open source implementasjoner av tidligere arbeids-versjon av denne sp
 https://github.com/3lvia/grid-tariff-api
 <br/>
 <br/>
-I første versjon av APIet er det kun PULL som støttes, med anbefalt kallfrekvens på Ã©n gang per døgn. PUSH vurderes støttet i fremtidige versjoner!
+I første versjon av APIet er det kun PULL som støttes, med anbefalt kallfrekvens på én gang per døgn. PUSH vurderes støttet i fremtidige versjoner!
 <br/>
 [image](https://user-images.githubusercontent.com/67076443/138090808-99e1e13e-f54d-4166-a437-5872af67a621.png)
 
