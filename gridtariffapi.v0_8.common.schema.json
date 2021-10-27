@@ -1,4 +1,4 @@
-{
+{ Dette er en test
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/DIGINenergi/API-nettleie-for-styring/blob/master/gridtariffapi.v0_8.common.schema.json",
   "title": "common",
