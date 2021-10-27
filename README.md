@@ -1,16 +1,14 @@
 # DIGIN Nettariff API <br> Spesifikasjon
-<br/>
+
 NB! Dette er foreløpig versjon som kan bli endret etter innspill fra aktørene i bransjen.
-<br/>
+
 ## Dokumentversjoner
-<br/>
 |     Dato    |     Versjon    |     Endring    |
 |-------------|----------------|----------------|
 |  27.10.21   |        0.8     |       Init     |
 |             |                |                |
 |             |                |                |
-<br/>
-<br/>
+
 ## 1. Bakgrunn
 DIGINprosjektet 'Nettariff API' jobber med utvikling av en standard for deling av nettariffdata med brukere og tredjepartsaktører i kraftsystemet. Det er ikke innenfor prosjektets mandat å standardisere hvilke nettariffmodeller som skal benyttes.
 <br/>
