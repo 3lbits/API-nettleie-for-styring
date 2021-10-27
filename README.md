@@ -9,31 +9,31 @@
 
 
 ## 1. Bakgrunn
-DIGINprosjektet 'Nettariff API' jobber med utvikling av en standard for deling av nettariffdata med brukere og tredjepartsaktÃ¸rer i kraftsystemet. Det er ikke innenfor prosjektets mandat Ã¥ standardisere hvilke nettariffmodeller som skal benyttes.
+DIGINprosjektet 'Nettariff API' jobber med utvikling av en standard for deling av nettariffdata med brukere og tredjepartsaktører i kraftsystemet. Det er ikke innenfor prosjektets mandat å standardisere hvilke nettariffmodeller som skal benyttes.
 <br/>
-Hensikten med APIet er Ã¥ stÃ¸tte styring ved hjelp av smarthusteknologi og dermed stimulere til Ã¸kt utnyttelse av fleksibilitet fra sluttbrukere. APIet er ikke ment Ã¥ brukes til Ã¥ fÃ¥ et korrekt historsik datagrunnlag for sluttbrukeres nettariff.
+Hensikten med APIet er å støtte styring ved hjelp av smarthusteknologi og dermed stimulere til økt utnyttelse av fleksibilitet fra sluttbrukere. APIet er ikke ment å brukes til å få et korrekt historsik datagrunnlag for sluttbrukeres nettariff.
 <br/>
-Dette betyr for eksempel at APIet leverer ut et GridTariff-objekt med kobling mellom en tariff og et mÃ¥lepunkt som er korrekt pÃ¥ tidspunktet for funksjonskallet. Hvis tidsperioden i gÃ¥r lenger tilbake enn startdato for mÃ¥lepunktets kontrakt, sÃ¥ gjenspeiles ikke dette i APIet.
+Dette betyr for eksempel at APIet leverer ut et GridTariff-objekt med kobling mellom en tariff og et målepunkt som er korrekt på tidspunktet for funksjonskallet. Hvis tidsperioden i går lenger tilbake enn startdato for målepunktets kontrakt, så gjenspeiles ikke dette i APIet.
 <br/>
-AltsÃ¥ er prishistorikken i responsen koblet til tariffen, ikke mÃ¥lepunktet.
+Altså er prishistorikken i responsen koblet til tariffen, ikke målepunktet.
 <br/>
-Prosjektet leverer standardiserte skjema, med tilhÃ¸rende dokumentasjon, for utveksling av nettariffdata. Legg merke til at det er opp til det enkelte nettselskap hvordan APIet skal implementeres, sÃ¥ prosjektet leverer ikke programvare for implementasjon.
+Prosjektet leverer standardiserte skjema, med tilhørende dokumentasjon, for utveksling av nettariffdata. Legg merke til at det er opp til det enkelte nettselskap hvordan APIet skal implementeres, så prosjektet leverer ikke programvare for implementasjon.
 <br/>
 ## 2. Hensikt med dette dokumentet
-Dokunmentasjon av beslutninger tatt i DIGINs prosjektgruppe for Ã¥ lage et standard API for utveksling av Nettariff data for styring/smarthus. 
+Dokunmentasjon av beslutninger tatt i DIGINs prosjektgruppe for å lage et standard API for utveksling av Nettariff data for styring/smarthus. 
 
 ## 3. Definisjoner
 API - Application programing interface
 <br/>
 OpenAPI - Standard for API spesifikasjoner, se referanser.
 <br/>
-Konsument/Klient - En applikasjon som konsumerer data fra et API. I denne sammenheng, typisk en 3. partsleverandÃ¸r som skal hente nettariff data fra en eller flere nettselskap.
+Konsument/Klient - En applikasjon som konsumerer data fra et API. I denne sammenheng, typisk en 3. partsleverandør som skal hente nettariff data fra en eller flere nettselskap.
 <br/>
 Implementasjon/Service - En tjeneste hos et nettselskap som leverer nettariff data etter DIGIN Nettariff spesifikasjonen.
 <br/>
 LS - Lavspent nettilknytning
 <br/>
-HS - HÃ¸yspent nettilknytning
+HS - Høyspent nettilknytning
 <br/>
 DN - DistribusjonsNett
 <br/>
@@ -41,19 +41,19 @@ RN - RegionalNett
 <br/>
 
 ## 4. Versjoner
-FÃ¸lgende versjoner finnes av DIGIN Nettariff API spesifikasjonen.
+Følgende versjoner finnes av DIGIN Nettariff API spesifikasjonen.
 
 |      Versjon     |      Type           |      Beskrivelse                            |      Kommentar        |
 |------------------|---------------------|---------------------------------------------|-----------------------|
 |     1.0          |     Offisiell       |     Offisiell versjon som skal implementeres|  Ikke utgitt          |
 |     0.9          |     Arbeid          |     Arbeids versjon etter innspill          |  Ikke utgitt          |
-|     0.8          |     Arbeid          |     Versjon for innspill fra aktÃ¸rer        |  Publisert 27.10.2021 |
+|     0.8          |     Arbeid          |     Versjon for innspill fra aktører        |  Publisert 27.10.2021 |
 |     0.7          |     Arbeid          |     Arbeids versjon                         |  Skal ikke publiseres |
 
-## 5. Hva bestÃ¥r spesifikasjonen av.
+## 5. Hva består spesifikasjonen av.
 Spesifikasjonen er opprettet ved bruk av standarden OpenAPI, https://www.openapis.org/
 <br/>
-Spesifikasjonen bestÃ¥r av 2 json filer.
+Spesifikasjonen består av 2 json filer.
 <br/>
 <br/>
 DiginGridTariffAPI.v0_8.json
@@ -66,13 +66,14 @@ gridtariffapi.v0_8.common.schema.json
 Inneholder definisjoner for input og output objekter brukt av metoder.
 <br/>
 <br/>
-OpenApi json filer kan vises som SWAGGER dokumentasjon. En mÃ¥te Ã¥ gjÃ¸re dette er Ã¥ benytte Microsoft Visual Studio Code (gratis).
+OpenApi json filer kan vises som SWAGGER dokumentasjon. En måte å gjøre dette er å benytte Microsoft Visual Studio Code (gratis).
 <br/>
 Importer OpenApi utvidelsen. 
 <br/>
-Ãpne begge json filene i Visual Studio Code.
+Ã
+pne begge json filene i Visual Studio Code.
 <br/>
-Velge utvidelsen OpenAPI (RÃ¸d sirkel rundt) og trykke pÃ¥ knappen "Show Preview using default render" (RÃ¸d sirkel rundt)
+Velge utvidelsen OpenAPI (Rød sirkel rundt) og trykke på knappen "Show Preview using default render" (Rød sirkel rundt)
 <br/>
 Dette vill vise SWAGGER dokumentasjon som vist i bildet under.
 <br/>
@@ -84,15 +85,15 @@ Dette vill vise SWAGGER dokumentasjon som vist i bildet under.
 DIGIN leverer ikke en ferdig implementasjon av APIet. DIGIN leverer spesifikasjon for implementasjon.
 <br/>
 <br/>
-Spesifikasjonsfilene kan benyttes til Ã¥ generere klient og service.<br/>
-OpenAPI, https://www.openapis.org/, nevner flere verktÃ¸y som kan benyttes til dette.
+Spesifikasjonsfilene kan benyttes til å generere klient og service.<br/>
+OpenAPI, https://www.openapis.org/, nevner flere verktøy som kan benyttes til dette.
 <br/>
 <br/>
 Hvis en bruker Microsoft Visual Studio kan en generere en klient.
 <br/>
-Dette gjÃ¸res i Visual Studio ved Ã¥ legge til en "Service Reference", velge sÃ¥ OpenAPI og sÃ¥ velge filen DiginGridTariffAPI.v0_8.json.
+Dette gjøres i Visual Studio ved å legge til en "Service Reference", velge så OpenAPI og så velge filen DiginGridTariffAPI.v0_8.json.
 <br/>
-Merk at filene DiginGridTariffAPI.v0_8.json og gridtariffapi.v0_8.common.schema.json mÃ¥ vÃ¦re i samme mappe.
+Merk at filene DiginGridTariffAPI.v0_8.json og gridtariffapi.v0_8.common.schema.json må være i samme mappe.
 <br/>
 <br/>
 Det finnes open source implementasjoner av tidligere arbeids-versjon av denne spesifikasjonen, som f.eks. Elvias implementasjon:
@@ -100,34 +101,34 @@ Det finnes open source implementasjoner av tidligere arbeids-versjon av denne sp
 https://github.com/3lvia/grid-tariff-api
 <br/>
 <br/>
-I fÃ¸rste versjon av APIet er det kun PULL som stÃ¸ttes, med anbefalt kallfrekvens pÃ¥ Ã©n gang per dÃ¸gn. PUSH vurderes stÃ¸ttet i fremtidige versjoner!
+I første versjon av APIet er det kun PULL som støttes, med anbefalt kallfrekvens på Ã©n gang per døgn. PUSH vurderes støttet i fremtidige versjoner!
 <br/>
 [image](https://user-images.githubusercontent.com/67076443/138090808-99e1e13e-f54d-4166-a437-5872af67a621.png)
 
   
 ## 7. Sikkerhet
-Implementasjon hos nettselskapene eller deres leverandÃ¸rer kan bli "hostet" flere steder og pÃ¥ forskjellige mÃ¥ter.
+Implementasjon hos nettselskapene eller deres leverandører kan bli "hostet" flere steder og på forskjellige måter.
 <br/>
-Det er 3 store sky lÃ¸sninger, Microsoft Azure, Google Cload, Amazon Web Services.
+Det er 3 store sky løsninger, Microsoft Azure, Google Cload, Amazon Web Services.
 <br/>
-Samt nettselskapene eller leverandÃ¸rene kan "hoste" implementasjonen pÃ¥ lokale "on prem" web servere.
+Samt nettselskapene eller leverandørene kan "hoste" implementasjonen på lokale "on prem" web servere.
 <br/>
-Vi har derfor sett det vanskelig Ã¥ spesifisere hvilken modell av sikkerhet som kan passe alle.
+Vi har derfor sett det vanskelig å spesifisere hvilken modell av sikkerhet som kan passe alle.
 <br/>
-DIGIN Grid Tariff API kommer med fÃ¸lgende anbefalinger:
+DIGIN Grid Tariff API kommer med følgende anbefalinger:
 <ul>
-  <li>En hver implementasjon bÃ¸r sikres med autorisering og autentisering av innkommende forespÃ¸rsler.
+  <li>En hver implementasjon bør sikres med autorisering og autentisering av innkommende forespørsler.
   <br/>
-Hvordan dette gjÃ¸res er opp til hver nettselskap/leverandÃ¸r.</li>
-  <li>Alle implementasjoner bÃ¸r benytte seg av https og bruke et gyldig sertifikat utgitt av godkjent leverandÃ¸r.
+Hvordan dette gjøres er opp til hver nettselskap/leverandør.</li>
+  <li>Alle implementasjoner bør benytte seg av https og bruke et gyldig sertifikat utgitt av godkjent leverandør.
 <br/>
-Med dette menes sertifikatet bÃ¸r vÃ¦re godkjent av en "Certificate Authority, CA"</li>
-  <li>Alle innkommende forespÃ¸rsler og implementasjoner/installasjoner bÃ¸r valideres i henhold til OWASP TOP 10, 
+Med dette menes sertifikatet bør være godkjent av en "Certificate Authority, CA"</li>
+  <li>Alle innkommende forespørsler og implementasjoner/installasjoner bør valideres i henhold til OWASP TOP 10, 
   <a href="https://owasp.org/www-project-top-ten">https://owasp.org/www-project-top-ten</a> </li>
 </ul>
 
 ## 8. Dato- og timeformat
-Alle angivelser av dato og tid i spÃ¸rringer og responser skal vÃ¦re i henhold til Elhubs Edielstandard.
+Alle angivelser av dato og tid i spørringer og responser skal være i henhold til Elhubs Edielstandard.
 <br/>
 https://dok.elhub.no/ediel/datetime-elements-37751603.html
 
@@ -145,34 +146,34 @@ Elhub Edielstandard. https://dok.elhub.no/ediel/edielstandard-37751483.html
 ## 10. Forklaring av tariffstruktur og eksempler
 Nettselskapene velger selv hvordan nettariffene bygges opp, innenfor visse rammer.
 <br/>
-Fra og med 01.01.2022 endres kravene og i praksis gjelder fÃ¸lgende:
+Fra og med 01.01.2022 endres kravene og i praksis gjelder følgende:
 <br/>
 <br/>
 Fastledd:
 <ul>
-  <li>Fastleddet skal differensieres etter kundens etterspÃ¸rsel etter kapasitet/effekt og vil dermed variere for kunder med Ã¥rsforbruk under 100.000 kWh</li>
+  <li>Fastleddet skal differensieres etter kundens etterspørsel etter kapasitet/effekt og vil dermed variere for kunder med årsforbruk under 100.000 kWh</li>
   <br/>
-  <li>I praksis vil de fleste tariffene baseres pÃ¥ makstime(r) pr dag eller mÃ¥ned, eller vÃ¦re sikringsbasert.</li>
+  <li>I praksis vil de fleste tariffene baseres på makstime(r) pr dag eller måned, eller være sikringsbasert.</li>
   <br/>
-  <li>Sikringsbasert: nivÃ¥et pÃ¥ fastleddet er basert pÃ¥ stÃ¸rrelse pÃ¥ hovedsikring.</li>
+  <li>Sikringsbasert: nivået på fastleddet er basert på størrelse på hovedsikring.</li>
   <br/>
-  <li>Makstimebasert: nivÃ¥et pÃ¥ fastleddet er basert pÃ¥ de(n) timen(e) i dÃ¸gnet, ogsÃ¥ kalt "dÃ¸gnmaks", eller mÃ¥neden(e), ogsÃ¥ kalt "mÃ¥nedsmaks", der forbruket mÃ¥lt i kW(eller kWh/h) er hÃ¸yest.</li>
+  <li>Makstimebasert: nivået på fastleddet er basert på de(n) timen(e) i døgnet, også kalt "døgnmaks", eller måneden(e), også kalt "månedsmaks", der forbruket målt i kW(eller kWh/h) er høyest.</li>
 </ul>
 <br/>
 Effektledd:
 <ul>
-  <li>Effektledd er kun tillatt for bedriftskunder med Ã¥rsforbruk over 100.000 kWh</li>
+  <li>Effektledd er kun tillatt for bedriftskunder med årsforbruk over 100.000 kWh</li>
 </ul>
 <br/>
 <br/>
-Eksempler pÃ¥ prising av forskjellige tariffer (pris i kr eks mva og forbrukseffekt/elavgift) og link til eksempelfiler:
+Eksempler på prising av forskjellige tariffer (pris i kr eks mva og forbrukseffekt/elavgift) og link til eksempelfiler:
 <br/>
 <br/>
-1. MÃ¥nedsmaks ("monthlymax" med differensiert fastledd) (priser er inkludert mva og avgifter)
+1. Månedsmaks ("monthlymax" med differensiert fastledd) (priser er inkludert mva og avgifter)
 <br/>
 Type: LS kunde < 100.000 kWh
 <br/>
-NettnivÃ¥: LS DN
+Nettnivå: LS DN
 <br/>
 Fastledd (kr/mnd): 
 <br/>
@@ -188,7 +189,7 @@ Fastledd (kr/mnd):
 <br/>
     > 16 kW: 350,00
 <br/>
-Energiledd (Ã¸re/kWh):
+Energiledd (øre/kWh):
 <br/>
      Vinter dag: 50,58
 <br/>
@@ -202,11 +203,11 @@ Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/mast
 <br/>
 <br/>
 <br/>
-2. DÃ¸gnmaks (med differensiert fastledd)  (priser er inkludert mva og avgifter)
+2. Døgnmaks (med differensiert fastledd)  (priser er inkludert mva og avgifter)
 <br/>
 Type: LS kunde < 100.000 kWh
 <br/>
-NettnivÃ¥: LS DN
+Nettnivå: LS DN
 <br/>
 Fastledd (kr/mnd): 
 <br/>
@@ -222,7 +223,7 @@ Fastledd (kr/mnd):
 <br/>
     > 16 kW: 350,00
 <br/>
-Energiledd (Ã¸re/kWh):
+Energiledd (øre/kWh):
 <br/>
      Vinter dag: 50,58
 <br/>
@@ -240,7 +241,7 @@ Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/mast
 <br/>
 Type: LS kunde < 100.000 kWh
 <br/>
-NettnivÃ¥: LS DN
+Nettnivå: LS DN
 <br/>
 Fastledd (kr/mnd): 
 <br/>
@@ -260,7 +261,7 @@ Fastledd (kr/mnd):
 <br/>
     99 A: 700,00
 <br/>
-Energiledd (Ã¸re/kWh):
+Energiledd (øre/kWh):
 <br/>
      Vinter dag: 50,58
 <br/>
@@ -278,7 +279,7 @@ Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/mast
 <br/>
 Type: Tariff med effektledd. 
 <br/>
-NettnivÃ¥: LS DN
+Nettnivå: LS DN
 <br/>
 Fastledd (kr/mnd): 340.00
 <br/>
@@ -292,7 +293,7 @@ Effektledd (kr/kW/mnd):
 <br/>
     Reaktiv effekt sommer: 10,61
 <br/>
-Energiledd (Ã¸re/kWh): 
+Energiledd (øre/kWh): 
 <br/>
      Vinter: 7,87
 <br/>
@@ -306,7 +307,7 @@ Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/mast
 <br/>
 Type: Tariff med effektledd. 
 <br/>
-NettnivÃ¥: LS DN
+Nettnivå: LS DN
 <br/>
 Fastledd (kr/mnd): 340,00
 <br/>
@@ -328,7 +329,7 @@ Effektledd (kr/kW/mnd):
 <br/>
     Reaktiv effekt sommer: 10,61
 <br/>
-  Energiledd (Ã¸re/kWh): 
+  Energiledd (øre/kWh): 
 <br/>
      Vinter: 7,87
 <br/>
