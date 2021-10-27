@@ -1,0 +1,154 @@
+{
+  "gridTariffCollections": [
+    {
+      "gridTariff": {
+        "tariffType": {
+          "tariffKey": "normal_low_cons_dailymax",
+          "product": "YY EL ZZZ YYY XXX",
+          "companyName": "Nettselskap 2 AS",
+          "companyOrgNo": "900000001",
+          "title": "Nettleie normal under 100MW",
+          "consumptionFlag": true,
+          "fixedPriceConfiguration": {
+            "basis": "dailymax",
+            "maxhoursPerDay": 1,
+            "daysPerMonth": null,
+            "allDaysPerMonth": true,
+            "maxhoursPerMonth": null,
+            "months": 1
+          },
+          "resolution": 60,
+          "description": "Tariff for private households and businesses with annual consumption below 100.000 kWh."
+        },
+        "tariffPrice": {
+          "priceInfo": [
+            {
+              "startTime": "2021-09-17T00:00:00+02:00",
+              "expiredAt": "2021-09-17T01:00:00+02:00",
+              "hoursShortName": "00-01",
+              "season": "summer",
+              "publicHoliday": false,
+              "fixedPrices": {
+                "priceLevel": [
+                  {
+                    "levelId": 1,
+                    "levelValueMin": 0.0000,
+                    "levelValueMax": 2.0000,
+                    "nextLevelIdDown": null,
+                    "nextLevelIdUp": 2,
+                    "levelValueUnitOfMeasure": "kWh/h",
+                    "monthlyTotal": 100.0000,
+                    "monthlyTotalUnitOfMeasure": "kr/month",
+                    "levelInfo": "Power consumption: 0-2 kWh/h",
+                    "total": 0.1388,
+                    "fixedExTaxes": 0.1110,
+                    "taxes": 0.0278,
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/hour"
+                  },
+                  {
+                    "levelId": 2,
+                    "levelValueMin": 2.0000,
+                    "levelValueMax": 4.0000,
+                    "nextLevelIdDown": 1,
+                    "nextLevelIdUp": 3,
+                    "levelValueUom": "kWh/h",
+                    "monthlyTotal": 115.0000,
+                    "monthlyTotalUnitOfMeasure": "kr/month",
+                    "levelInfo": "Power consumption: 2-4 kWh/h",
+                    "total": 0.1597,
+                    "fixedExTaxes": 0.1277,
+                    "taxes": 0.0320,
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/hour"
+                  },
+                  {
+                    "levelId": 3,
+                    "levelValueMin": 4.0000,
+                    "levelValueMax": 8.0000,
+                    "nextLevelIdDown": 2,
+                    "nextLevelIdUp": 4,
+                    "levelValueUom": "kWh/h",
+                    "monthlyTotal": 140.0000,
+                    "monthlyTotalUnitOfMeasure": "kr/month",
+                    "levelInfo": "Power consumption: 4-8 kWh/h",
+                    "total": 0.1944,
+                    "fixedExTaxes": 0.1555,
+                    "taxes": 0.0389,
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/hour"
+                  },
+                  {
+                    "levelId": 4,
+                    "levelValueMin": 8.0000,
+                    "levelValueMax": 12.0000,
+                    "nextLevelIdDown": 3,
+                    "nextLevelIdUp": 5,
+                    "levelValueUom": "kWh/h",
+                    "monthlyTotal": 170.0000,
+                    "monthlyTotalUnitOfMeasure": "kr/month",
+                    "levelInfo": "Power consumption: 8-12 kWh/h",
+                    "total": 0.2361,
+                    "fixedExTaxes": 0.1889,
+                    "taxes": 0.0472,
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/hour"
+                  },
+                  {
+                    "levelId": 5,
+                    "levelValueMin": 12.0000,
+                    "levelValueMax": 16.0000,
+                    "nextLevelIdDown": 4,
+                    "nextLevelIdUp": 6,
+                    "levelValueUom": "kWh/h",
+                    "monthlyTotal": 225.0000,
+                    "monthlyTotalUnitOfMeasure": "kr/month",
+                    "levelInfo": "Power consumption: 12-16 kWh/h",
+                    "total": 0.3125,
+                    "fixedExTaxes": 0.2500,
+                    "taxes": 0.0625,
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/hour"
+                  },
+                  {
+                    "levelId": 6,
+                    "levelValueMin": 16.0000,
+                    "levelValueMax": null,
+                    "nextLevelIdDown": 5,
+                    "nextLevelIdUp": null,
+                    "levelValueUom": "kWh/h",
+                    "monthlyTotal": 350.0000,
+                    "monthlyTotalUnitOfMeasure": "kr/month",
+                    "levelInfo": "Power consumption: >16 kWh/h",
+                    "total": 0.4861,
+                    "fixedExTaxes": 0.3888,
+                    "taxes": 0.0973,
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/hour"
+                  }
+                ],
+                "currentPriceLevel": {
+                  "currentLevelId": 3,
+                  "currentLevelValue": null
+                }
+              },
+              "variablePrices": {
+                "energyPrice": {
+                  "total": 0.2585,
+                  "energyExTaxes": 0.0299,
+                  "taxes": 0.2286,
+                  "level": "CHEAP",
+                  "currency": "NOK",
+                  "monetaryUnitOfMeasure": "kr/kWh"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "meteringPointIds": [
+        "707057500000000004","707057500000000005","707057500000000006"
+      ]
+    }
+  ]
+}
