@@ -1,0 +1,491 @@
+{
+  "gridTariffCollections": [
+    {
+      "gridTariff": {
+        "tariffType": {
+          "tariffKey": "power_ls_dn",
+          "product": "AA EL 12345",
+          "companyName": "Nettselskap 4 AS",
+          "companyOrgNo": "900000003",
+          "title": "Nettleie lavspent dn diff effektledd",
+          "consumptionFlag": true,
+          "lastUpdated": "2021-11-05T00:00:00+01:00",
+          "usePublicHolidayPrices": false,
+          "useWeekendPrices": false,
+          "fixedPriceConfiguration": {
+            "basis": "fixed",
+            "maxhoursPerDay": null,
+            "daysPerMonth": null,
+            "allDaysPerMonth": null,
+            "maxhoursPerMonth": null,
+            "months": null
+          },
+          "powerPriceConfiguration": {
+            "reactivePowerPricing": true,
+            "powerFactorPercentage": 50.0000
+          },
+          "resolution": 60,
+          "description": "Tariff for low voltage connection in distribution grid"
+        },
+        "tariffPrice": {
+          "hours": [
+            {
+              "startTime": "2021-09-17T00:00:00+02:00",
+              "expiredAt": "2021-09-17T01:00:00+02:00",
+              "shortName": "0000-0100",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T01:00:00+02:00",
+              "expiredAt": "2021-09-17T02:00:00+02:00",
+              "shortName": "0100-0200",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T02:00:00+02:00",
+              "expiredAt": "2021-09-17T03:00:00+02:00",
+              "shortName": "0200-0300",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T03:00:00+02:00",
+              "expiredAt": "2021-09-17T04:00:00+02:00",
+              "shortName": "0300-0400",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T04:00:00+02:00",
+              "expiredAt": "2021-09-17T05:00:00+02:00",
+              "shortName": "0400-0005",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T05:00:00+02:00",
+              "expiredAt": "2021-09-17T06:00:00+02:00",
+              "shortName": "0500-0600",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T06:00:00+02:00",
+              "expiredAt": "2021-09-17T07:00:00+02:00",
+              "shortName": "0600-0700",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T07:00:00+02:00",
+              "expiredAt": "2021-09-17T08:00:00+02:00",
+              "shortName": "0700-0800",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T08:00:00+02:00",
+              "expiredAt": "2021-09-17T09:00:00+02:00",
+              "shortName": "0800-0900",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T09:00:00+02:00",
+              "expiredAt": "2021-09-17T10:00:00+02:00",
+              "shortName": "0900-1000",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T10:00:00+02:00",
+              "expiredAt": "2021-09-17T11:00:00+02:00",
+              "shortName": "1000-1100",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T11:00:00+02:00",
+              "expiredAt": "2021-09-17T12:00:00+02:00",
+              "shortName": "1100-1200",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            },
+            {
+              "startTime": "2021-09-17T12:00:00+02:00",
+              "expiredAt": "2021-09-17T13:00:00+02:00",
+              "shortName": "1200-1300",
+              "isPublicHoliday": false,
+              "fixedPrice": {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "hourId": "a4afa37ae2ec41048e2b5153c35af1c5"
+              },
+              "powerPrice": {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "hourId": "27134fc2-514d-479e-aedb-f13fc4f087d1"
+              },
+              "energyPrice": {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "total": 0.2585,
+                "totalExVat": 0.2068
+              }
+            }
+          ],
+          "priceInfo": {
+            "fixedPrices": [
+              {
+                "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+                "startDate": "2021-01-01",
+                "endDate": "2021-12-31",
+                "priceLevel": [
+                  {
+                    "id": "edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
+                    "valueMin": null,
+                    "valueMax": null,
+                    "nextIdDown": null,
+                    "nextIdUp": null,
+                    "valueUnitOfMeasure": "kWh/h",
+                    "monthlyTotal": 140.0000,
+                    "monthlyTotalExVat": 112.0000,
+                    "monthlyExTaxes": 112.0000,
+                    "monthlyTaxes": 28.0000,
+                    "monthlyUnitOfMeasure": "kr/month",
+                    "hourPrices": [
+                      {
+                        "id": "884d57a8-c8ac-462c-a04e-7554f3fc9c7a",
+                        "numberOfDaysInMonth": 31,
+                        "total": 0.1881,
+                        "totalExVat": 0.1504
+                      },
+                      {
+                        "id": "a4afa37ae2ec41048e2b5153c35af1c5",
+                        "numberOfDaysInMonth": 30,
+                        "total": 0.1944,
+                        "totalExVat": 0.1555
+                      },
+                      {
+                        "id": "00af3883-9de4-4bb8-b8ba-b32c79dde575",
+                        "numberOfDaysInMonth": 29,
+                        "total": 0.2011,
+                        "totalExVat": 0.1608
+                      },
+                      {
+                        "id": "c6581146-fab6-4105-bf7a-69715e014673",
+                        "numberOfDaysInMonth": 28,
+                        "total": 0.2083,
+                        "totalExVat": 0.1666
+                      }
+                    ],
+                    "levelInfo": "Fixed price component for Nettleie lavspent DS diff effektledd",
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/hour"
+                  }
+                ]
+              }
+            ],
+            "powerPrices": [
+              {
+                "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+                "startDate": "2021-01-01",
+                "endDate": "2021-12-31",
+                "priceLevel": [
+                  {
+                    "id": "c87bfdc8-a73c-4c93-9a3b-b2558b4aa3c4",
+                    "valueMin": 0,
+                    "valueMax": 100,
+                    "nextIdDown": null,
+                    "nextIdUp": "d40424b5-78a5-427a-bf70-b0b33dde6df0",
+                    "valueUnitOfMeasure": "kW",
+                    "monthlyActivePowerTotal": 27.5000,
+                    "monthlyActivePowerTotalExVat": 22.0000,
+                    "monthlyActivePowerExTaxes": 22.0000,
+                    "monthlyActivePowerTaxes": 5.5000,
+                    "monthlyReactivePowerTotal": 13.2625,
+                    "monthlyReactivePowerTotalExVat": 10.6100,
+                    "monthlyReactivePowerExTaxes": 10.6100,
+                    "monthlyReactivePowerTaxes": 2.6525,
+                    "monthlyUnitOfMeasure": "kr/kW/month",
+                    "hourPrices": [
+                      {
+                        "id": "d85adcfa-24bd-4561-a0df-ae6b5ce475bc",
+                        "numberOfDaysInMonth": 31,
+                        "activeTotal": 0.0369,
+                        "activeTotalExVat": 0.0295,
+                        "reactiveTotal": 0.0178,
+                        "reactiveTotalExVat": 0.0142
+                      },
+                      {
+                        "id": "27134fc2-514d-479e-aedb-f13fc4f087d1",
+                        "numberOfDaysInMonth": 30,
+                        "activeTotal": 0.0381,
+                        "activeTotalExVat": 0.0316,
+                        "reactiveTotal": 0.0184,
+                        "reactiveTotalExVat": 0.0147
+                      },
+                      {
+                        "id": "0609c164-0ce0-4dce-b6e5-1236e506a9f1",
+                        "numberOfDaysInMonth": 29,
+                        "activeTotal": 0.0395,
+                        "activeTotalExVat": 0.0316,
+                        "reactiveTotal": 0.0190,
+                        "reactiveTotalExVat": 0.0152
+                      },
+                      {
+                        "id": "3c1869cb-17dc-43d1-ac9f-40c332b018c8",
+                        "numberOfDaysInMonth": 28,
+                        "activeTotal": 0.0409,
+                        "activeTotalExVat": 0.0327,
+                        "reactiveTotal": 0.0197,
+                        "reactiveTotalExVat": 0.0157
+                      }
+                    ],
+                    "levelInfo": "Power price component for Nettleie lavspent DS diff effektledd",
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/kW/month"
+                  },
+                  {
+                    "id": "d40424b5-78a5-427a-bf70-b0b33dde6df0",
+                    "valueMin": 100,
+                    "valueMax": null,
+                    "nextIdDown": "c87bfdc8-a73c-4c93-9a3b-b2558b4aa3c4",
+                    "nextIdUp": null,
+                    "valueUnitOfMeasure": "kW",
+                    "monthlyActivePowerTotal": 13.7500,
+                    "monthlyActivePowerTotalExVat": 11.0000,
+                    "monthlyActivePowerExTaxes": 11.0000,
+                    "monthlyActivePowerTaxes": 2.7500,
+                    "monthlyReactivePowerTotal": 13.2625,
+                    "monthlyReactivePowerTotalExVat": 10.6100,
+                    "monthlyReactivePowerExTaxes": 10.6100,
+                    "monthlyReactivePowerTaxes": 2.6525,
+                    "monthlyUnitOfMeasure": "kr/kW/month",
+                    "hourPrices": [
+                      {
+                        "id": "d85adcfa-24bd-4561-a0df-ae6b5ce475bc",
+                        "numberOfDaysInMonth": 31,
+                        "activeTotal": 0.0184,
+                        "activeTotalExVat": 0.0147,
+                        "reactiveTotal": 0.0178,
+                        "reactiveTotalExVat": 0.0142
+                      },
+                      {
+                        "id": "27134fc2-514d-479e-aedb-f13fc4f087d1",
+                        "numberOfDaysInMonth": 30,
+                        "activeTotal": 0.0190,
+                        "activeTotalExVat": 0.0152,
+                        "reactiveTotal": 0.0184,
+                        "reactiveTotalExVat": 0.0147
+                      },
+                      {
+                        "id": "0609c164-0ce0-4dce-b6e5-1236e506a9f1",
+                        "numberOfDaysInMonth": 29,
+                        "activeTotal": 0.0197,
+                        "activeTotalExVat": 0.0157,
+                        "reactiveTotal": 0.0190,
+                        "reactiveTotalExVat": 0.0152
+                      },
+                      {
+                        "id": "3c1869cb-17dc-43d1-ac9f-40c332b018c8",
+                        "numberOfDaysInMonth": 28,
+                        "activeTotal": 0.0204,
+                        "activeTotalExVat": 0.0163,
+                        "reactiveTotal": 0.0197,
+                        "reactiveTotalExVat": 0.0157
+                      }
+                    ],
+                    "levelInfo": "Power price component for Nettleie lavspent DS diff effektledd",
+                    "currency": "NOK",
+                    "monetaryUnitOfMeasure": "kr/kW/month"
+                  }
+                ]
+              }
+            ],
+            "energyPrices": [
+              {
+                "id": "4360704e-ea68-4aaa-818f-a3ff04a47cbd",
+                "startDate": "2021-01-01",
+                "endDate": "2021-12-31",
+                "season": "summer",
+                "level": "NORMAL",
+                "total": 0.2585,
+                "totalExVat": 0.2068,
+                "energyExTaxes": 0.0399,
+                "taxes": 0.2286,
+                "currency": "NOK",
+                "monetaryUnitOfMeasure": "kr/kWh"
+              },
+              {
+                "id": "55cdea90-8439-498f-a7d3-c6fe6452038c",
+                "startDate": "2021-01-01",
+                "endDate": "2021-12-31",
+                "season": "winter",
+                "level": "NORMAL",
+                "total": 0.5000,
+                "totalExVat": 0.4000,
+                "energyExTaxes": 0.2331,
+                "taxes": 0.1000,
+                "currency": "NOK",
+                "monetaryUnitOfMeasure": "kr/kWh"
+              }
+            ]
+          }
+        }
+      },
+      "meteringPointsAndPriceLevels": [
+        {
+          "meteringPointIds": [
+            "707057500000000010",
+            "707057500000000011",
+            "707057500000000012"
+          ]
+        }
+      ]
+    }
+  ]
+}

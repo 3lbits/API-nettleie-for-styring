@@ -1,0 +1,756 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/digin-energi/API-nettleie-for-styring/blob/main/gridtariffapi.v0_9.common.schema.json",
+  "title": "common",
+  "TariffQueryRequestMeteringPoints": {
+    "type": "object",
+    "properties": {
+      "range": {
+        "description": "A keyword for the from-to time range. Exclusive OR with startTime/endTime. Yesterday = hour 0 through hour 23 yesterday etc.",
+        "maxLength": 10,
+        "minLength": 0,
+        "pattern": "yesterday|today|tomorrow",
+        "type": "string",
+        "nullable": true
+      },
+      "startTime": {
+        "description": "Start timestamp for the time range. Inclusive AND with endTime. Exclusive OR with range. Example 2021-09-17T00:00:00+02:00",
+        "type": "string",
+        "format": "date-time",
+        "nullable": true
+      },
+      "endTime": {
+        "description": "End timestamp for the time range. Inclusive AND with startTime. Exclusive OR with range. Example 2021-09-18T00:00:00+02:00",
+        "type": "string",
+        "format": "date-time",
+        "nullable": true
+      },
+      "meteringPointIds": {
+        "description": "List of meteringpoint-ids you are the registered owner of as a private person or your company has e legal reason to request in a customer/provider relationship. Example 707057500000000001",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "GridTariffCollection": {
+    "description": "The response object with the grid tariff object and the meteringpointid object",
+    "type": "object",
+    "properties": {
+      "gridTariff": {
+        "$ref": "gridtariffapi.v0_9.common.schema.json#/GridTariff"
+      },
+      "meteringPointsAndPriceLevels": {
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/MeteringPointsAndPriceLevels"
+        },
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "MeteringPointsAndPriceLevels": {
+    "description": "The response object with the grid tariff object and the meteringpointid object",
+    "type": "object",
+    "properties": {
+      "currentFixedPriceLevel": {
+        "$ref": "gridtariffapi.v0_9.common.schema.json#/CurrentFixedPriceLevel",
+        "nullable": true
+      },
+      "meteringPointIds": {
+        "$ref": "gridtariffapi.v0_9.common.schema.json#/MeteringPointIds"
+      }
+    },
+    "additionalProperties": false
+  },
+  "GridTariff": {
+    "description": "The grid tariff object with the tariff type object and the tariff price object",
+    "type": "object",
+    "properties": {
+      "tariffType": {
+        "$ref": "gridtariffapi.v0_9.common.schema.json#/TariffType"
+      },
+      "tariffPrice": {
+        "$ref": "gridtariffapi.v0_9.common.schema.json#/TariffPrice"
+      }
+    },
+    "additionalProperties": false
+  },
+  "TariffType": {
+    "description": "Information about the tariff type",
+    "type": "object",
+    "properties": {
+      "tariffKey": {
+        "description": "A keyword for this grid tariff in this grid company. Ex. private_tou_daynight.",
+        "type": "string",
+        "nullable": true
+      },
+      "product": {
+        "description": "Name of the grid company product, for grid company internal use.",
+        "type": "string",
+        "nullable": true
+      },
+      "companyName": {
+        "description": "Name of the grid company. Ex. Elvia AS",
+        "type": "string",
+        "nullable": true
+      },
+      "companyOrgNo": {
+        "description": "Organization number of the grid company. Ex. 980489698",
+        "type": "string"
+      },
+      "title": {
+        "description": "Name of the grid tariff type. Ex. Nettleie under 100MWh",
+        "type": "string",
+        "nullable": true
+      },
+      "consumptionFlag": {
+        "description": "Indicates if this is a tariff for consumption or production. True = consumption",
+        "type": "boolean"
+      },
+      "lastUpdated": {
+        "description": "The time of when the prices were last updated on the server side. No need to get prices if you already fetched the latest ones? Ex. 2021-11-05T00:00:00+01:00",
+        "type": "string",
+        "format": "date-time"
+      },
+      "usePublicHolidayPrices": {
+        "description": "True if the grid tariff use the lowest prices during public holidays.",
+        "type": "boolean",
+        "nullable": true
+      },
+      "useWeekendPrices": {
+        "description": "True if the grid tariff use the lowest prices during public weekends(Saturday and/or Sunday)",
+        "type": "boolean",
+        "nullable": true
+      },
+      "fixedPriceConfiguration": {
+        "$ref": "gridtariffapi.v0_9.common.schema.json#/FixedPriceConfiguration"
+      },
+      "powerPriceConfiguration": {
+        "$ref": "gridtariffapi.v0_9.common.schema.json#/PowerPriceConfiguration",
+        "nullable": true
+      },
+      "resolution": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "description": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "FixedPriceConfiguration": {
+    "description": "Parameters to visualize how the fixed price component is calculated. Ex. if months > 1, then the average of the maxhoursPerMonth for x months is the basis for the fixed price etc. Weighting is not supported in this version.",
+    "type": "object",
+    "properties": {
+      "basis": {
+        "description": "Description of fixed price basis. Values: monthlymax|dailymax|fusesize|fixed.",
+        "pattern": "monthlymax|dailymax|fusesize|fixed",
+        "type": "string"
+      },
+      "maxhoursPerDay": {
+        "description": "Only for dailymax tariff. Number of hours per day. Null if not dailymax tariff. Ex. value is 1 if 1 hour per day is used as basis",
+        "type": "integer",
+        "nullable": true
+      },
+      "daysPerMonth": {
+        "description": "Only for dailymax tariff. Number of days per month. Null if not dailymax tariff or if allDaysPerMonth is true. Ex. value is 1 if 1 day per month is used as basis",
+        "type": "integer",
+        "nullable": true
+      },
+      "allDaysPerMonth": {
+        "description": "Only for dailymax tariff. Flag to indicate if a dailymax tariff uses all days per month as basis. True = all days per month is used. False = not all days per month are used or basis != dailymax. If false, then daysPerMonth must not be null.",
+        "type": "boolean",
+        "nullable": true
+      },
+      "maxhoursPerMonth": {
+        "description": "Only for monthlymax tariff. Number of hours per month. Null if not monthlymax tariff.",
+        "type": "integer",
+        "nullable": true
+      },
+      "months": {
+        "description": "For dailymax and monthlymax tariffs. Number of months maxhours are measured(averaged). Null if not dailymax or monthlymax tariff.",
+        "type": "integer",
+        "nullable": true
+      }
+    }
+  },
+  "PowerPriceConfiguration": {
+    "description": "Parameters to visualize how the fixed price component is calculated. Ex. if months > 1, then the average of the maxhoursPerMonth for x months is the basis for the fixed price etc. Weighting is not supported in this version.",
+    "type": "object",
+    "properties": {
+      "reactivePowerPricing": {
+        "description": "True = reactive power prices applies and powerFactor indicates triggering point. False = reactive power prices does not apply.",
+        "type": "boolean",
+        "nullable": true
+      },
+      "powerFactorPercentage": {
+        "description": "The power factor is used to trigger invoicing of reactive power. Ex. a power factor of 0.9 equals a power factor percentage of 50, meaning invoicing starts when reactive power is more than 50% of active power. Pricing applies to exceeding value above 50%. Ex. 50.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      }
+    }
+  },
+  "TariffPrice": {
+    "description": "The tariff price object with the prices",
+    "type": "object",
+    "properties": {
+      "hours": {
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/Hours"
+        },
+        "nullable": true
+      },
+      "priceInfo": {
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/PriceInfo"
+        },
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "Hours": {
+    "description": "The time series with prices per resolution period.",
+    "type": "object",
+    "properties": {
+      "startTime": {
+        "description": "The start time of this resolution period. Ex. 2021-09-17T00:00:00+02:00",
+        "type": "string",
+        "format": "date-time"
+      },
+      "expiredAt": {
+        "description": "The time when this resolution period is expired. Ex. 2021-09-17T01:00:00+02:00",
+        "type": "string",
+        "format": "date-time"
+      },
+      "shortName": {
+        "description": "Short name for this resolution period. Ex. 0000-0100",
+        "type": "string",
+        "nullable": true
+      },
+      "isPublicHoliday": {
+        "description": "Indicate if this is a public holiday true=public holiday",
+        "type": "boolean"
+      },
+      "fixedPrice": {
+        "description": "Object with id references to fixed prices",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.fixedPrices.id. Ex. 216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+            "type": "string"
+          },
+          "hourId": {
+            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.fixedPrices.priceLevel.hourPrices.id Ex. a4afa37ae2ec41048e2b5153c35af1c5",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "powerPrice": {
+        "description": "Object with id references to power prices",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.powerPrices.id. Ex. f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+            "type": "string"
+          },
+          "hourId": {
+            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.powerPrices.priceLevel.hourPrices.id Ex. 27134fc2-514d-479e-aedb-f13fc4f087d1",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "energyPrice": {
+        "description": "Object with id references to energy prices and the hourly energy price included taxes",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.energyPrices.id. Ex. 0852242b-90a9-4f71-9903-e881d55194f9",
+            "type": "string"
+          },
+          "total": {
+            "description": "Total price of energy component for this resolution period. This is for easier access to the hourly energy price. Ex. 0.2850",
+            "type": "number",
+            "format": "double"
+          },
+          "totalExVat": {
+            "description": "Total price of energy component for this resolution period included all taxes except VAT. This is for easier access to the hourly energy price. Ex. 0.2280",
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false
+  },
+  "PriceInfo": {
+    "description": "The price object with the price details",
+    "type": "object",
+    "properties": {
+      "fixedPrices": {
+        "description": "Object with list of fixed prices",
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/FixedPrices"
+        },
+        "nullable": true
+      },
+      "powerPrices": {
+        "description": "Object with list of power prices",
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/PowerPrices"
+        },
+        "nullable": true
+      },
+      "energyPrices": {
+        "description": "Object with list of energy prices",
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/EnergyPrices"
+        },
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "FixedPrices": {
+    "description": "Fixed prices object containing priceLevel list",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique id for this fixed price (decided by the start and end time of the price). Ex. 216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+        "type": "string"
+      },
+      "startDate": {
+        "description": "Start date for when this fixed price is valid from. Ex. 2021-01-01",
+        "type": "string",
+        "format": "date",
+        "nullable": true
+      },
+      "endDate": {
+        "description": "End date for when this fixed price is valid to. Ex. 2021-12-31",
+        "type": "string",
+        "format": "date",
+        "nullable": true
+      },
+      "priceLevel": {
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/FixedPriceLevel"
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "PowerPrices": {
+    "description": "Power price object containing properties for power price.",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique id for this power price (decided by the start and end time of the price). Ex. f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
+        "type": "string"
+      },
+      "startDate": {
+        "description": "Start date for when this power price is valid from. Ex. 2021-01-01",
+        "type": "string",
+        "format": "date",
+        "nullable": true
+      },
+      "endDate": {
+        "description": "End date for when this power price is valid to. Ex. 2021-12-31",
+        "type": "string",
+        "format": "date",
+        "nullable": true
+      },
+      "priceLevel": {
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/PowerPriceLevel"
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "EnergyPrices": {
+    "description": "Energy price object containing properties for energy price. The total can be multiplied by consumption in this resolution period to get cost of energy price",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique id for this energy price (decided by the start and end time of the price). Ex. ba446e00-24be-4850-b212-fdc9f20cfef0",
+        "type": "string"
+      },
+      "startDate": {
+        "description": "Start date for when this energy price is valid from. Ex. 2021-01-01",
+        "type": "string",
+        "format": "date",
+        "nullable": true
+      },
+      "endDate": {
+        "description": "End date for when this energy price is valid to. Ex. 2021-12-31",
+        "type": "string",
+        "format": "date",
+        "nullable": true
+      },
+      "season": {
+        "description": "Season for this resolution period. Ex. summer",
+        "pattern": "summer|winter|year",
+        "type": "string",
+        "nullable": true
+      },
+      "level": {
+        "description": "Short name for the price level for this resolution period. Ex. CHEAP",
+        "pattern": "VERY_CHEAP|CHEAP|NORMAL|EXPENSIVE|VERY_EXPENSIVE",
+        "type": "string",
+        "nullable": true
+      },
+      "total": {
+        "description": "Total price of energy component for this resolution period. Ex. 0.2585",
+        "type": "number",
+        "format": "double"
+      },
+      "totalExVat": {
+        "description": "Total price of energy component for this resolution period included all taxes except VAT. Ex. 0.2068",
+        "type": "number",
+        "format": "double"
+      },
+      "energyExTaxes": {
+        "description": "Price of energy component excluded taxes for this resolution period. Ex. 0.0299",
+        "type": "number",
+        "format": "double"
+      },
+      "taxes": {
+        "description": "Taxes for the energy component for this resolution period. Ex. 0.2286",
+        "type": "number",
+        "format": "double"
+      },
+      "currency": {
+        "description": "Currency. Ex. NOK",
+        "type": "string",
+        "nullable": true
+      },
+      "monetaryUnitOfMeasure": {
+        "description": "Unit of measure for the energy prices. Ex. kr/kWh",
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "FixedPriceLevel": {
+    "description": "The fixed prices and attributes for this price level for the resolution period. Ex. hour 00-01",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique fixed price component level id. Ex. edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
+        "type": "string"
+      },
+      "valueMin": {
+        "description": "Minimum value the level is based on. Included on this level for monthlymax and dailymax models(Ex. 0.0000 kWh/h). Included for fusesize based(Ex. 50 A). Null if this is the lowest level.",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "valueMax": {
+        "description": "Maximum value the level is based on. Excluded on this level for monthlymax and dailymax models(Ex. 2.0000 kWh/h which is the next level start value). Included for fusesize based(Ex. 50 A). Null if this is the highest level.",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "nextIdDown": {
+        "description": "Level id of the level below the current. Ex. null if this is the lowest level",
+        "type": "string",
+        "nullable": true
+      },
+      "nextIdUp": {
+        "description": "Level id of the level above the current. Ex. a920b2af-a43f-4de4-aa86-33ea874bdbc4",
+        "type": "string",
+        "nullable": true
+      },
+      "valueUnitOfMeasure": {
+        "description": "Unit of measure for the valueMin and Max. Ex. kWh/h",
+        "type": "string",
+        "nullable": true
+      },
+      "monthlyTotal": {
+        "description": "Total monthly fixed price for this level included taxes. Ex 100.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyTotalExVat": {
+        "description": "Monthly fixed price including all taxes except VAT. Ex 80.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyExTaxes": {
+        "description": "Monthly fixed price exluded all taxes. Ex 80.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyTaxes": {
+        "description": "Monthly total for all taxes including VAT for fixed price. Ex 20.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyUnitOfMeasure": {
+        "description": "Unit of measure for the monthlyTotal fixed price. Ex. kr/month",
+        "type": "string",
+        "nullable": true
+      },
+      "hourPrices": {
+        "description": "List of hourly prices for months with 31,30,29 and 28 days for this fixed price level.",
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/HourFixedPrices"
+        }
+      },
+      "levelInfo": {
+        "description": "Information about this fixed price level. Ex. Power consumption: 8-12 kWh/h",
+        "type": "string",
+        "nullable": true
+      },
+      "currency": {
+        "description": "The currency for all monetary units of measures. Ex. NOK",
+        "type": "string",
+        "nullable": true
+      },
+      "monetaryUnitOfMeasure": {
+        "description": "Unit of measure for the hourPrices. Ex. kr/hour",
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "PowerPriceLevel": {
+    "description": "The fixed prices and attributes for this price level for the resolution period. Ex. hour 00-01",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique fixed price component level id. Ex. edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
+        "type": "string"
+      },
+      "valueMin": {
+        "description": "Minimum value the level is based on. Included on this level for monthlymax and dailymax models(Ex. 0.0000 kWh/h). Included for fusesize based(Ex. 50 A). Null if this is the lowest level.",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "valueMax": {
+        "description": "Maximum value the level is based on. Excluded on this level for monthlymax and dailymax models(Ex. 2.0000 kWh/h which is the next level start value). Included for fusesize based(Ex. 50 A). Null if this is the highest level.",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "nextIdDown": {
+        "description": "Level id of the level below the current. Ex. null if this is the lowest level",
+        "type": "string",
+        "nullable": true
+      },
+      "nextIdUp": {
+        "description": "Level id of the level above the current. Ex. a920b2af-a43f-4de4-aa86-33ea874bdbc4",
+        "type": "string",
+        "nullable": true
+      },
+      "valueUnitOfMeasure": {
+        "description": "Unit of measure for the valueMin and Max. Ex. kWh/h",
+        "type": "string",
+        "nullable": true
+      },
+      "monthlyActivePowerTotal": {
+        "description": "Total monthly active power price. To be multiplied with the number of kW (specifically kWh/h) on the maximum hour of the month. Ex. 27.500",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyActivePowerTotalExVat": {
+        "description": "Monthly active power price including all taxes except VAT. Ex 80.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyActivePowerExTaxes": {
+        "description": "Monthly active power price excluded taxes. To be multiplied with the number of kW (specifically kWh/h) on the maximum hour of the month. Ex. 22.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyActivePowerTaxes": {
+        "description": "Monthly active power taxes. To be multiplied with the number of kW (specifically kWh/h) on the maximum hour of the month. Ex. 5.5000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyReactivePowerTotal": {
+        "description": "Total monthly reactive power price. May be multiplied with the number of kW (specifically kWh/h) which exceeds the powerFactorPercentage on the maximum hour of the month. Ex. 13.2625",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyReactivePowerTotalExVat": {
+        "description": "Monthly reactive power price including all taxes except VAT. Ex 80.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyReactivePowerExTaxes": {
+        "description": "Monthly reactive power price excluded taxes. May be multiplied with the number of kW (specifically kWh/h) which exceeds the powerFactorPercentage on the maximum hour of the month. Ex. 10.6100",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyReactivePowerTaxes": {
+        "description": "Monthly reactive power taxes. May be multiplied with the number of kW (specifically kWh/h) which exceeds the powerFactorPercentage on the maximum hour of the month. ONLY USED FOR POWER PRICE. Ex. 2.6525",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "monthlyUnitOfMeasure": {
+        "description": "Unit of measure for the monthlyTotal power price. Ex. kr/month",
+        "type": "string",
+        "nullable": true
+      },
+      "hourPrices": {
+        "description": "List of hourly prices for months with 31,30,29 and 28 days for this power price level.",
+        "type": "array",
+        "items": {
+          "$ref": "gridtariffapi.v0_9.common.schema.json#/HourPowerPrices"
+        }
+      },
+      "levelInfo": {
+        "description": "Information about this fixed price level. Ex. Power consumption: 8-12 kWh/h",
+        "type": "string",
+        "nullable": true
+      },
+      "currency": {
+        "description": "The currency for all monetary units of measures. Ex. NOK",
+        "type": "string",
+        "nullable": true
+      },
+      "monetaryUnitOfMeasure": {
+        "description": "Unit of measure for the hourPrices. Ex. kr/hour",
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "HourFixedPrices": {
+    "description": "Price per hour for fixed prices, with a unique id",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique id. Ex. 884d57a8-c8ac-462c-a04e-7554f3fc9c7a",
+        "type": "string"
+      },
+      "numberOfDaysInMonth": {
+        "description": "The number of days the total fixed price is divided by to find the hourly price. Valid values: 31|30|29|28. Ex. 30",
+        "type": "string"
+      },
+      "total": {
+        "description": "Total price of fixed component for this resolution period included taxes. Calculated by monthlyTotal/(number of days in the month)/24 hours. Ex. 0.1388",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "totalExVat": {
+        "description": "Total price of fixed component for this resolution period included all taxes except VAT. Calculated by monthlyTotalExVat/(number of days in the month)/24 hours. Ex. 0.1388",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "HourPowerPrices": {
+    "description": "Price per hour for power prices, with a unique id",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique id. Ex. 884d57a8-c8ac-462c-a04e-7554f3fc9c7a",
+        "type": "string"
+      },
+      "numberOfDaysInMonth": {
+        "description": "The number of days the total power price is divided by to find the hourly price. Valid values: 31|30|29|28. Ex. 30",
+        "type": "string"
+      },
+      "activeTotal": {
+        "description": "Total price of active power for the power component for this resolution period included taxes. Calculated by monthlyActivePowerTotal/(number of days in the month)/24 hours. Ex. 0.0381",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "activeTotalExVat": {
+        "description": "Total price of active power for the power component for this resolution period included all taxes except VAT. Calculated by monthlyActivePowerTotalExVat/(number of days in the month)/24 hours. Ex. 0.0381",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "reactiveTotal": {
+        "description": "Total price of reactive power for the power component for this resolution period included taxes. Calculated by monthlyReactivePowerTotal/(number of days in the month)/24 hours. Ex. 0.0184",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "reactiveTotalExVat": {
+        "description": "Total price of reactive power for the power component for this resolution period included all taxes except VAT. Calculated by monthlyReactivePowerTotalExVat/(number of days in the month)/24 hours. Ex. 0.0184",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "CurrentFixedPriceLevel": {
+    "description": "The last known fixed price level the MPID is placed in based on fuse size or max hour measurement",
+    "type": "object",
+    "properties": {
+      "id": {
+        "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.fixedPrices.id. Ex. 216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+        "type": "string"
+      },
+      "levelId": {
+        "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.fixedPrices.priceLevel.id. Ex. edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
+        "type": "string"
+      },
+      "levelValue": {
+        "description": "Value of the max hour setting the level of fixedprice. NOT IN USE YET AS IT REQUIRES A HIGHER LEVEL OF AUTHENTICATION AND AUTHORIZATION. Ex. 9.0000",
+        "type": "number",
+        "format": "double",
+        "nullable": true
+      },
+      "lastUpdated": {
+        "description": "Time of when the last metervalues were received from the meters to calculate basis for the fixed level. Ex. 2021-09-17T02:00:00+02:00",
+        "type": "string",
+        "format": "date-time",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "MeteringPointIds": {
+    "description": "List of meteringpoint-ids that has this tariff type at the time of the api call. Ex. 707057500000000002",
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "nullable": true
+  }
+}
