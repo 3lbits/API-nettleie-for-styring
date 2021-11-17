@@ -1,6 +1,6 @@
 # DIGIN Nettariff API <br> Spesifikasjon
 
-NB! Dette er foreløpig versjon som kan bli endret etter innspill fra aktørene i bransjen.
+NB! Dette er foreløpig versjon som kan bli endret før v1.0 publiseres.
 
 ## Dokumentversjoner
 |     Dato    |     Versjon    |     Endring    |
