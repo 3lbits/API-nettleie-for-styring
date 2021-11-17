@@ -6,7 +6,7 @@ NB! Dette er foreløpig versjon som kan bli endret etter innspill fra aktørene 
 |     Dato    |     Versjon    |     Endring    |
 |-------------|----------------|----------------|
 |  27.10.21   |        0.8     |       Init     |
-|  17.11.21   |        0.9     | Soft release   |
+|             |                |                |
 |             |                |                |
 
 ## 1. Bakgrunn
@@ -38,9 +38,7 @@ HS - Høyspent nettilknytning
 <br/>
 DN - DistribusjonsNett
 <br/>
-RN - RegionalNett (NB. DEKKES IKKE AV APIet)
-<br/>
-Unique id - En unik id som er garantert unik innenfor responsen fra ett nettselskap. Dette kan være for eksempel en GUID (Global Unique IDentifier) eller et løpenummer som unikt identifiserer elementet i responsen. Denne er ikke garantert unik på tvers av flere nettselskaper.
+RN - RegionalNett
 <br/>
 
 ## 4. Versjoner
@@ -59,12 +57,12 @@ Spesifikasjonen er opprettet ved bruk av standarden OpenAPI, https://www.openapi
 Spesifikasjonen består av 2 json filer.
 <br/>
 <br/>
-DiginGridTariffAPI.v0_9.json
+DiginGridTariffAPI.v0_8.json
 <br/>
 Dette er OpenAPI spesifikasjonsfilen. Denne inneholder metoder og skjemadefinisjoner.
 <br/>
 <br/>
-gridtariffapi.v0_9.common.schema.json
+gridtariffapi.v0_8.common.schema.json
 <br/>
 Inneholder definisjoner for input- og outputobjekter brukt av metoder.
 <br/>
@@ -93,9 +91,9 @@ OpenAPI, https://www.openapis.org/, nevner flere verktøy som kan benyttes til d
 <br/>
 Hvis en bruker Microsoft Visual Studio kan en generere en klient.
 <br/>
-Dette gjøres i Visual Studio ved å legge til en "Service Reference", velge OpenAPI og så velge filen DiginGridTariffAPI.v0_9.json.
+Dette gjøres i Visual Studio ved å legge til en "Service Reference", velge OpenAPI og så velge filen DiginGridTariffAPI.v0_8.json.
 <br/>
-Merk at filene DiginGridTariffAPI.v0_9.json og gridtariffapi.v0_9.common.schema.json må være i samme mappe.
+Merk at filene DiginGridTariffAPI.v0_8.json og gridtariffapi.v0_8.common.schema.json må være i samme mappe.
 <br/>
 <br/>
 Det finnes open source implementasjoner av tidligere arbeids-versjon av denne spesifikasjonen, som f.eks. Elvias implementasjon:
@@ -115,29 +113,15 @@ Det er 3 store skyløsninger: Microsoft Azure, Google Cloud, Amazon Web Services
 Samt nettselskapene eller leverandørene kan "hoste" implementasjonen på lokale "on prem" web servere.
 <br/>
 Vi har derfor sett det vanskelig å spesifisere hvilken modell av sikkerhet som kan passe alle.
-<br/><br/>
-DIGIN kommer med følgende anbefalinger for implementering av GridTariffAPI:
-<ul>
-  <li>Enhver implementasjon bør sikres med autorisering og autentisering av innkommende forespørsler.
-  <br/>
-  Hvordan dette gjøres er opp til hver nettselskap/leverandør, men det anbefales fra DIGIN at det anvendes:
-  </br>
-  <ul>
-    <li>HTTPS</li>
-    <li>Gyldig sertifikat utgitt av godkjent leverandør
-    </br>Med dette menes sertifikatet bør være godkjent av en "Certificate Authority, CA"</li>
-    <li>API key (name: X-API-Key) som request header
-    </br>
-    Mer om bruk av API key her: <a href="https://swagger.io/docs/specification/authentication/api-keys/">https://swagger.io/docs/specification/authentication/api-keys/ </a>
-    </br>
-    og her: <a href="https://cloud.google.com/endpoints/docs/openapi/when-why-api-key">https://cloud.google.com/endpoints/docs/openapi/when-why-api-key</a> </li> </li> 
-    <li>API key utstedes per klient(for eksempel en smarthusleverandør eller en privat bruker) med registrert epost 
-    </br>
-    API key bør ha en gyldighet på flere år (for eksempel 5 år)
-    </br>
-    Registrert epost brukes til å varsle klient ved invalidering av API key eller i god tid før automatisk utløp av API key</li></ul>
 <br/>
-
+DIGIN Grid Tariff API kommer med følgende anbefalinger:
+<ul>
+  <li>En hver implementasjon bør sikres med autorisering og autentisering av innkommende forespørsler.
+  <br/>
+Hvordan dette gjøres er opp til hver nettselskap/leverandør.</li>
+  <li>Alle implementasjoner bør benytte seg av https og bruke et gyldig sertifikat utgitt av godkjent leverandør.
+<br/>
+Med dette menes sertifikatet bør være godkjent av en "Certificate Authority, CA"</li>
   <li>Alle innkommende forespørsler og implementasjoner/installasjoner bør valideres i henhold til OWASP TOP 10, 
   <a href="https://owasp.org/www-project-top-ten">https://owasp.org/www-project-top-ten</a> </li>
 </ul>
@@ -214,7 +198,7 @@ Energiledd (øre/kWh):
 <br/>
      Sommer natt: 25,85
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v0_9_meteringpointsgridtariffs_json_output_monthlymax_example1.json
+Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/master/doc/DiginGridTariffAPI.v0_8_meteringpointsgridtariffs_json_output_monthlymax_example1.json
 <br/>
 <br/>
 <br/>
@@ -248,7 +232,7 @@ Energiledd (øre/kWh):
 <br/>
      Sommer natt: 25,85
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v0_9_meteringpointsgridtariffs_json_output_dailymax_example1.json
+Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/master/doc/DiginGridTariffAPI.v0_8_meteringpointsgridtariffs_json_output_dailymax_example1.json
 <br/>
 <br/>
 <br/>
@@ -286,7 +270,7 @@ Energiledd (øre/kWh):
 <br/>
      Sommer natt: 25,85
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v0_9_meteringpointsgridtariffs_json_output_fusesize_example1.json
+Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/master/doc/DiginGridTariffAPI.v0_8_meteringpointsgridtariffs_json_output_fusesize_example1.json
 <br/>
 <br/>
 <br/>
@@ -314,7 +298,7 @@ Energiledd (øre/kWh):
 <br/>
      Sommer: 3,90
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v0_9_meteringpointsgridtariffs_json_output_LSDN_example1.json
+Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/master/doc/DiginGridTariffAPI.v0_8_meteringpointsgridtariffs_json_output_LSDN_example1.json
 <br/>
 <br/>
 <br/>
@@ -350,13 +334,13 @@ Effektledd (kr/kW/mnd):
 <br/>
      Sommer: 3,90
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v0_9_meteringpointsgridtariffs_json_output_LSDN_example2.json
+Link eksempel: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/master/doc/DiginGridTariffAPI.v0_8_meteringpointsgridtariffs_json_output_LSDN_example2.json
 <br/>
 <br/>
 <br/>
 Eksempler input:
 <br/>
-Input with range parameter: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v0_9_meteringpointsgridtariffs_json_input_example_range.json
+Input with range parameter: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/master/doc/DiginGridTariffAPI.v0_8_meteringpointsgridtariffs_json_input_example_range.json
 <br/>
-Input with startTime and endTime parameters: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v0_9_meteringpointsgridtariffs_json_input_example_startTime_endTime.json
+Input with startTime and endTime parameters: https://github.com/DIGINenergi/API-nettleie-for-styring/blob/master/doc/DiginGridTariffAPI.v0_8_meteringpointsgridtariffs_json_input_example_startTime_endTime.json
 <br/>
