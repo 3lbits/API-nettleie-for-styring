@@ -1,0 +1,22 @@
+{
+  "gridTariffGridCompanyMapping": {
+    "meteringPointRange": [
+      {
+        "meteringPointIdFrom": "70705750000000000",
+        "meteringPointIdTo": "70705750009999999",
+        "companyName": "Nettselskap AS",
+        "companyOrgNo": "900000000",
+        "apiUrl": "/",
+        "userDocUrlOrEmail": "/"
+      },
+      {
+        "meteringPointIdFrom": "70705750010000000",
+        "meteringPointIdTo": "70705750019999999",
+        "companyName": "Nettselskap 2 AS",
+        "companyOrgNo": "900000002",
+        "apiUrl": "/",
+        "userDocUrlOrEmail": "/"
+      }
+    ]
+  }
+}

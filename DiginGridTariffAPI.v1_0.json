@@ -1,0 +1,267 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Digin Grid Tariff API",
+    "description": "Provides grid tariffs. For external and internal use. https://github.com/digin-energi/API-nettleie-for-styring",
+    "version": "1.0",
+    "contact": {
+      "name": "Digin Grid Tariff API",
+      "url": "https://github.com/digin-energi/API-nettleie-for-styring"
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "TariffQueryRequestMeteringPointsResult": {
+        "type": "object",
+        "properties": {
+          "gridTariffCollections": {
+            "type": "array",
+            "items": {
+              "$ref": "gridtariffapi.v1_0.common.schema.json#/GridTariffCollection"
+            }
+          }
+        }
+      },
+      "TariffQueryRequestMeteringPoints": {
+        "type": "object",
+        "$ref": "gridtariffapi.v1_0.common.schema.json#/TariffQueryRequestMeteringPoints",
+        "additionalProperties": false
+      },
+      "TariffQueryResult": {
+        "type": "object",
+        "properties": {
+          "gridTariff": {
+            "$ref": "gridtariffapi.v1_0.common.schema.json#/GridTariff"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TariffTypeContainer": {
+        "type": "object",
+        "properties": {
+          "tariffTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "gridtariffapi.v1_0.common.schema.json#/TariffType"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "paths": {
+    "/api/{v}/tariffquery/meteringpointsgridtariffs": {
+      "post": {
+        "tags": [
+          "TariffQuery"
+        ],
+        "summary": "Returns tariff data for a given set of meteringpoints for a given timeperiod.",
+        "parameters": [
+          {
+            "description": "The API specification version to be used.",
+            "name": "v",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "MeteringPointIds ditctates which meteringpoints to return tariff data for.<br></br>If a meteringpointid is unknown to api it will be omitted from the responseRange dictates which day to query.<br></br>Valid values is yesterday,today,tomorrow StartTime/EndTime dictates which timeperiod to query.<br></br>Range and StartTime/Endtime is mutual exclusive, meaning either one must be present, but not both. Date time formats using Edielstandard, see README file",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TariffQueryRequestMeteringPoints"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "TariffData matching query parameters, also including meteringpoints associated with each tariff. Date time formats using Edielstandard, see README file",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffQueryRequestMeteringPointsResult"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No data for given request"
+          },
+          "304": {
+            "description": "Not modified"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/{v}/tariffquery": {
+      "get": {
+        "tags": [
+          "TariffQuery"
+        ],
+        "summary": "Returns tariff data for a given tariff for a given timeperiod",
+        "description": "Range and StartTime/Endtime is mutual exclusive, meaning either one must be present, but not bot. Date time formats using Edielstandard, see README file",
+        "parameters": [
+          {
+            "name": "TariffKey",
+            "description": "TariffKey dictates which tariff will be queried",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "maxLength": 100,
+              "minLength": 0,
+              "type": "string"
+            }
+          },
+          {
+            "name": "Range",
+            "description": "Range dictates which day to query, valid values is yesterday,today,tomorrow",
+            "in": "query",
+            "schema": {
+              "maxLength": 10,
+              "minLength": 0,
+              "pattern": "yesterday|today|tomorrow",
+              "type": "string",
+              "nullable": true
+            }
+          },
+          {
+            "name": "StartTime",
+            "in": "query",
+            "description": "StartTime/EndTime dictates which timeperiod to query.",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "EndTime",
+            "in": "query",
+            "description": "StartTime/EndTime dictates which timeperiod to query.",
+            "schema": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            }
+          },
+          {
+            "name": "v",
+            "description": "The API specification version to be used.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffQueryResult"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No data for given request"
+          },
+          "304": {
+            "description": "Not modified"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/{v}/tarifftype": {
+      "get": {
+        "tags": [
+          "TariffType"
+        ],
+        "summary": "Service returns all available private tariffs",
+        "parameters": [
+          {
+            "name": "v",
+            "description": "The API specification version to be used.",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All tariffs. Date time formats using Edielstandard, see README file",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffTypeContainer"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffTypeContainer"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffTypeContainer"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
