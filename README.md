@@ -281,3 +281,7 @@ Input with range parameter: https://github.com/digin-energi/API-nettleie-for-sty
 <br/>
 Input with startTime and endTime parameters: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_input_example_startTime_endTime.json
 <br/>
+
+## 11. Endringslogg:
+22.12.2021 Versjon 1.0.1: DiginGridTariffAPI.v1_0: Lagt til input parameter Product(for internt bruk for nettselskap) som er Exclusive OR med TariffKey. TariffKey ikke lenger definert required.
+<br/>
