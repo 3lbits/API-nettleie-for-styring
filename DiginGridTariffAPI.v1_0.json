@@ -3,7 +3,7 @@
   "info": {
     "title": "Digin Grid Tariff API",
     "description": "Provides grid tariffs. For external and internal use. https://github.com/digin-energi/API-nettleie-for-styring",
-    "version": "1.0",
+    "version": "1.0.1",
     "contact": {
       "name": "Digin Grid Tariff API",
       "url": "https://github.com/digin-energi/API-nettleie-for-styring"
@@ -127,9 +127,18 @@
         "parameters": [
           {
             "name": "TariffKey",
-            "description": "TariffKey dictates which tariff will be queried",
+            "description": "TariffKey dictates which tariff will be queried. Exclusive OR with Product.",
             "in": "query",
-            "required": true,
+            "schema": {
+              "maxLength": 100,
+              "minLength": 0,
+              "type": "string"
+            }
+          },
+          {
+            "name": "Product",
+            "description": "Internal product code or name to be used internally at the grid company. Exclusive OR with TariffKey.",
+            "in": "query",
             "schema": {
               "maxLength": 100,
               "minLength": 0,
