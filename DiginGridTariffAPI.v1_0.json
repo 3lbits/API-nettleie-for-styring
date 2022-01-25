@@ -3,7 +3,7 @@
   "info": {
     "title": "Digin Grid Tariff API",
     "description": "Provides grid tariffs. For external and internal use. https://github.com/digin-energi/API-nettleie-for-styring",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "contact": {
       "name": "Digin Grid Tariff API",
       "url": "https://github.com/digin-energi/API-nettleie-for-styring"
@@ -147,7 +147,7 @@
           },
           {
             "name": "Range",
-            "description": "Range dictates which day to query, valid values is yesterday,today,tomorrow",
+            "description": "Range dictates which day to query, valid values is yesterday,today,tomorrow. Exclusive OR with startTime/endTime. Yesterday = hour 0 through hour 23 yesterday etc.",
             "in": "query",
             "schema": {
               "maxLength": 10,
@@ -160,7 +160,7 @@
           {
             "name": "StartTime",
             "in": "query",
-            "description": "StartTime/EndTime dictates which timeperiod to query.",
+            "description": "Start DateTime/End DateTime dictates which timeperiod to query. Exclusive OR with range. Example 2021-09-17T00:00:00+02:00",
             "schema": {
               "type": "string",
               "format": "date-time",
@@ -170,7 +170,7 @@
           {
             "name": "EndTime",
             "in": "query",
-            "description": "StartTime/EndTime dictates which timeperiod to query.",
+            "description": "Start DateTime/End DateTime dictates which timeperiod to query. Exclusive OR with range. Example 2021-09-18T00:00:00+02:00",
             "schema": {
               "type": "string",
               "format": "date-time",

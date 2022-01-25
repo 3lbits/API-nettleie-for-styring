@@ -54,15 +54,15 @@
     "additionalProperties": false
   },
   "MeteringPointsAndPriceLevels": {
-    "description": "The response object with the grid tariff object and the meteringpointid object",
+    "description": "The response object with the currentFixedPriceLevel object and the meteringPoints object. currentFixedPriceLevel is omitted: if time of the api call is outside of the request timespan (timeNow < StartTime or timeNow > EndTime). This is due to the connection between meteringPoint and tariff is only instant.",
     "type": "object",
     "properties": {
       "currentFixedPriceLevel": {
         "$ref": "gridtariffapi.v1_0.common.schema.json#/CurrentFixedPriceLevel",
         "nullable": true
       },
-      "meteringPointIds": {
-        "$ref": "gridtariffapi.v1_0.common.schema.json#/MeteringPointIds"
+      "meteringPoints": {
+        "$ref": "gridtariffapi.v1_0.common.schema.json#/MeteringPoints"
       }
     },
     "additionalProperties": false
@@ -247,7 +247,7 @@
             "type": "string"
           },
           "hourId": {
-            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.fixedPrices.priceLevel.hourPrices.id Ex. a4afa37ae2ec41048e2b5153c35af1c5",
+            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.fixedPrices.priceLevels.hourPrices.id Ex. a4afa37ae2ec41048e2b5153c35af1c5",
             "type": "string"
           }
         },
@@ -262,7 +262,7 @@
             "type": "string"
           },
           "hourId": {
-            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.powerPrices.priceLevel.hourPrices.id Ex. 27134fc2-514d-479e-aedb-f13fc4f087d1",
+            "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.powerPrices.priceLevels.hourPrices.id Ex. 27134fc2-514d-479e-aedb-f13fc4f087d1",
             "type": "string"
           }
         },
@@ -343,7 +343,7 @@
         "format": "date",
         "nullable": true
       },
-      "priceLevel": {
+      "priceLevels": {
         "type": "array",
         "items": {
           "$ref": "gridtariffapi.v1_0.common.schema.json#/FixedPriceLevel"
@@ -372,7 +372,7 @@
         "format": "date",
         "nullable": true
       },
-      "priceLevel": {
+      "priceLevels": {
         "type": "array",
         "items": {
           "$ref": "gridtariffapi.v1_0.common.schema.json#/PowerPriceLevel"
@@ -715,7 +715,7 @@
     "additionalProperties": false
   },
   "CurrentFixedPriceLevel": {
-    "description": "The last known fixed price level the MPID is placed in based on fuse size or max hour measurement",
+    "description": "The last known fixed price level the meteringPoint is placed in for FixedPriceConfiguration.basis = monthlymax/dailymax (based on max hours). For fusesize it is based on the fusesize. CurrentFixedPriceLevel is omitted: if time of the api call is outside of the request timespan (timeNow < StartTime or timeNow > EndTime). This is due to the connection between meteringPoint and tariff is only instant.",
     "type": "object",
     "properties": {
       "id": {
@@ -723,7 +723,27 @@
         "type": "string"
       },
       "levelId": {
-        "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.fixedPrices.priceLevel.id. Ex. edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
+        "description": "Unique id referencing gridTariffCollections.gridTariff.tariffPrice.priceInfo.fixedPrices.priceLevels.id. Null: if FixedPriceConfiguration.basis = monthlymax|dailymax and no consumption calculation done so far this month. Ex. edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "MeteringPoints": {
+    "description": "List of meteringpoints connected to this grid tariff at the time of the api call.",
+    "type": "array",
+    "items": {
+      "$ref": "gridtariffapi.v1_0.common.schema.json#/MeteringPointDetails"
+    },
+    "nullable": true
+  },
+  "MeteringPointDetails": {
+    "description": "Definition of meteringPointId and levelValue/lastUpdated for fixed price level",
+    "type": "object",
+    "properties": {
+      "meteringPointId": {
+        "description": "meteringPointId. Ex. 707057500000000001",
         "type": "string"
       },
       "levelValue": {
@@ -733,20 +753,12 @@
         "nullable": true
       },
       "lastUpdated": {
-        "description": "Time of when the last metervalues were received from the meters to calculate basis for the fixed level. Ex. 2021-09-17T02:00:00+02:00",
+        "description": "The end time(hour) of the last calculated hour consumption(based on meter reading or estimation) this month. Null if FixedPriceConfiguration.basis = fixed. Ex. 2021-09-17T02:00:00+02:00",
         "type": "string",
         "format": "date-time",
         "nullable": true
       }
     },
     "additionalProperties": false
-  },
-  "MeteringPointIds": {
-    "description": "List of meteringpoint-ids that has this tariff type at the time of the api call. Ex. 707057500000000002",
-    "type": "array",
-    "items": {
-      "type": "string"
-    },
-    "nullable": true
   }
 }

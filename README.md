@@ -283,5 +283,18 @@ Input with startTime and endTime parameters: https://github.com/digin-energi/API
 <br/>
 
 ## 11. Endringslogg:
-22.12.2021 Versjon 1.0.1: DiginGridTariffAPI.v1_0: Lagt til input parameter Product(for internt bruk for nettselskap) som er Exclusive OR med TariffKey. TariffKey ikke lenger definert required.
+22.12.2021: Versjon 1.0.1:<br/>
+<ul>
+  <li> DiginGridTariffAPI.v1_0: Lagt til input parameter Product(for internt bruk for nettselskap) som er Exclusive OR med TariffKey. TariffKey ikke lenger definert required.</li><br/>
+</ul>
+26.01.2022: Versjon 1.0.2:<br/> 
+<ul>
+  <li>DiginGridTariffAPI.v1_0.json:</li>
+  Endret description for StartTime, EndTime og Range i tag TariffQuery.<br/>
+  <br/>
+  <li>gridtariffapi.v1_0.common.schema.json og alle eksempelfiler:</li>
+  Endret MeteringPointsAndPriceLevels til å inneholde currentFixedPriceLevel og meteringPoints, for å koble lastUpdated til meteringPoints og ikke currentFixedPriceLevel.<br/>
+  Endret CurrentFixedPriceLevel.levelId.description og MeteringPointDetails.lastUpdated.description.<br/>
+  Endret FixedPrices.pricelevel til FixedPrices.pricelevels og fra PowerPrices.pricelevel til PowerPrices.pricelevels.<br/>
+</ul>
 <br/>

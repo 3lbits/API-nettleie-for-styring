@@ -9,7 +9,7 @@
           "companyOrgNo": "900000003",
           "title": "Nettleie lavspent dn",
           "consumptionFlag": true,
-          "lastUpdated": "2021-11-05T00:00:00+01:00",
+          "lastUpdated": "2021-09-01T00:00:00+02:00",
           "usePublicHolidayPrices": false,
           "useWeekendPrices": false,
           "fixedPriceConfiguration": {
@@ -283,7 +283,7 @@
                 "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
                 "startDate": "2021-09-17",
                 "endDate": "2021-09-17",
-                "priceLevel": [
+                "priceLevels": [
                   {
                     "id": "edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
                     "valueMin": null,
@@ -334,7 +334,7 @@
                 "id": "f122e3e7-3e0c-43ca-a3ce-051ec0339b98",
                 "startDate": "2021-09-17",
                 "endDate": "2021-09-17",
-                "priceLevel": [
+                "priceLevels": [
                   {
                     "id": "c87bfdc8-a73c-4c93-9a3b-b2558b4aa3c4",
                     "valueMin": null,
@@ -412,10 +412,16 @@
       },
       "meteringPointsAndPriceLevels": [
         {
-          "meteringPointIds": [
-            "707057500000000007",
-            "707057500000000008",
-            "707057500000000009"
+          "currentFixedPriceLevel": {
+            "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+            "levelId": "edcf53ce-70d3-4fa0-8bfb-e79918335ab7"
+          },
+          "meteringPoints": [
+            {
+              "meteringPointId": "707057500000000000",
+              "levelValue": null,
+              "lastUpdated": null
+            }
           ]
         }
       ]
