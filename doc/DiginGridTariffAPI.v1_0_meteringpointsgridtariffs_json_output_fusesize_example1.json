@@ -9,7 +9,7 @@
           "companyOrgNo": "900000002",
           "title": "Nettleie normal under 100MW",
           "consumptionFlag": true,
-          "lastUpdated": "2021-11-05T00:00:00+01:00",
+          "lastUpdated": "2021-09-01T00:00:00+02:00",
           "usePublicHolidayPrices": false,
           "useWeekendPrices": false,
           "fixedPriceConfiguration": {
@@ -227,7 +227,7 @@
                 "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
                 "startDate": "2021-09-17",
                 "endDate": "2021-09-17",
-                "priceLevel": [
+                "priceLevels": [
                   {
                     "id": "edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
                     "valueMin": 10.0000,
@@ -602,24 +602,45 @@
         {
           "currentFixedPriceLevel": {
             "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
-            "levelId": "edcf53ce-70d3-4fa0-8bfb-e79918335ab7",
-            "levelValue": null,
-            "lastUpdated": "2021-11-05T01:00:00+01:00"
+            "levelId": null
           },
-          "meteringPointIds": [
-            "707057500000000007"
+          "meteringPoints": [
+            {
+              "meteringPointId": "707057500000000008",
+              "levelValue": null,
+              "lastUpdated": null
+            }
           ]
         },
         {
           "currentFixedPriceLevel": {
             "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
-            "levelId": "4e3de6a7-e1ed-4156-9b1e-04f924609b7d",
-            "levelValue": null,
-            "lastUpdated": "2021-11-05T01:00:00+01:00"
+            "levelId": "edcf53ce-70d3-4fa0-8bfb-e79918335ab7"
           },
-          "meteringPointIds": [
-            "707057500000000008",
-            "707057500000000009"
+          "meteringPoints": [
+            {
+              "meteringPointId": "707057500000000009",
+              "levelValue": null,
+              "lastUpdated": "2021-09-17T01:00:00+02:00"
+            }
+          ]
+        },
+        {
+          "currentFixedPriceLevel": {
+            "id": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+            "levelId": "4e3de6a7-e1ed-4156-9b1e-04f924609b7d"
+          },
+          "meteringPoints": [
+            {
+              "meteringPointId": "707057500000000010",
+              "levelValue": null,
+              "lastUpdated": "2021-09-17T02:00:00+02:00"
+            },
+            {
+              "meteringPointId": "707057500000000011",
+              "levelValue": null,
+              "lastUpdated": "2021-09-17T03:00:00+02:00"
+            }
           ]
         }
       ]
