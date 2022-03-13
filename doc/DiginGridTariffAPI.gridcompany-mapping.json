@@ -2,20 +2,84 @@
   "gridTariffGridCompanyMapping": {
     "meteringPointRange": [
       {
-        "meteringPointIdFrom": "70705750000000000",
-        "meteringPointIdTo": "70705750009999999",
-        "companyName": "Nettselskap AS",
-        "companyOrgNo": "900000000",
-        "apiUrl": "/",
-        "userDocUrlOrEmail": "/"
+        "meteringPointIdFrom": "70705750001430000",
+        "meteringPointIdTo": "70705750001679999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
       },
       {
-        "meteringPointIdFrom": "70705750010000000",
-        "meteringPointIdTo": "70705750019999999",
-        "companyName": "Nettselskap 2 AS",
-        "companyOrgNo": "900000002",
-        "apiUrl": "/",
-        "userDocUrlOrEmail": "/"
+        "meteringPointIdFrom": "70705750001991000",
+        "meteringPointIdTo": "70705750002269999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "70705750002627000",
+        "meteringPointIdTo": "70705750002684999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "70705750003190000",
+        "meteringPointIdTo": "70705750003469999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "70705750003470000",
+        "meteringPointIdTo": "70705750003574999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "70705750004907000",
+        "meteringPointIdTo": "70705750006206999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "70705750008019000",
+        "meteringPointIdTo": "70705750008026999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "70705750008552000",
+        "meteringPointIdTo": "70705750008614999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "70705750008721000",
+        "meteringPointIdTo": "70705750008730999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "70705750008731000",
+        "meteringPointIdTo": "70705750008749999",
+        "companyName": "ELVIA AS",
+        "companyOrgNo": "980489698",
+        "apiUrl": "https://elvia.azure-api.net/grid-tariff",
+        "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
       }
     ]
   }
