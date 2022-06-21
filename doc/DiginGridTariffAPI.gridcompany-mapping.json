@@ -80,6 +80,46 @@
         "companyOrgNo": "980489698",
         "apiUrl": "https://elvia.azure-api.net/grid-tariff",
         "userDocUrlOrEmail": "https://www.elvia.no/smart-forbruk/api-for-nettleie-priser-kan-gjore-hjemmet-ditt-smartere/"
+      },
+      {
+        "meteringPointIdFrom": "707057500016900000",
+        "meteringPointIdTo": "707057500017799999",
+        "companyName": "Norgesnett AS",
+        "companyOrgNo": "980234088",
+        "apiUrl": "https://gridtariff-api.norgesnett.no",
+        "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
+      },
+      {
+        "meteringPointIdFrom": "707057500075110000",
+        "meteringPointIdTo": "707057500075889999",
+        "companyName": "Norgesnett AS",
+        "companyOrgNo": "980234088",
+        "apiUrl": "https://gridtariff-api.norgesnett.no",
+        "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
+      },
+      {
+        "meteringPointIdFrom": "707057500080540000",
+        "meteringPointIdTo": "707057500080799999",
+        "companyName": "Norgesnett AS",
+        "companyOrgNo": "980234088",
+        "apiUrl": "https://gridtariff-api.norgesnett.no",
+        "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
+      },
+      {
+        "meteringPointIdFrom": "70705750008054000",
+        "meteringPointIdTo": "70705750008079999",
+        "companyName": "Norgesnett AS",
+        "companyOrgNo": "980234088",
+        "apiUrl": "https://gridtariff-api.norgesnett.no",
+        "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
+      },
+      {
+        "meteringPointIdFrom": "70705750001690000",
+        "meteringPointIdTo": "70705750001779999",
+        "companyName": "Norgesnett AS",
+        "companyOrgNo": "980234088",
+        "apiUrl": "https://gridtariff-api.norgesnett.no",
+        "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
       }
     ]
   }
