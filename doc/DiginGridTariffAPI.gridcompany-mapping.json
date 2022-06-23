@@ -120,6 +120,14 @@
         "companyOrgNo": "980234088",
         "apiUrl": "https://gridtariff-api.norgesnett.no",
         "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
+      },
+      {
+        "meteringPointIdFrom": "70705750007619000",
+        "meteringPointIdTo": "70705750008018999",
+        "companyName": "AGDER ENERGI NETT AS",
+        "companyOrgNo": "982974011",
+        "apiUrl": "https://app.ae.no/api/gridtariff",
+        "userDocUrlOrEmail": ""
       }
     ]
   }
