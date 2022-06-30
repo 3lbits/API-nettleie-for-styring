@@ -176,6 +176,23 @@
         "companyOrgNo": "981915550",
         "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
+      },
+	        {
+        "meteringPointIdFrom": "70705750008837000",
+        "meteringPointIdTo": "70705750008839999",
+        "companyName": "Lnett AS",
+        "companyOrgNo": "980038408",
+        "apiUrl": "https://api.l-nett.no/apis/t/prod.lyse.no/gta/api/1.0/tarifftype",
+        "userDocUrlOrEmail": "https://www.l-nett.no/tariff-api/"
+      },
+
+		{
+        "meteringPointIdFrom": "70705750006998000",
+        "meteringPointIdTo": "70705750007497999",
+        "companyName": "Lnett AS",
+        "companyOrgNo": "980038408",
+        "apiUrl": "https://api.l-nett.no/apis/t/prod.lyse.no/gta/api/1.0/tarifftype",
+        "userDocUrlOrEmail": "https://www.l-nett.no/tariff-api//"
       }
     ]
   }
