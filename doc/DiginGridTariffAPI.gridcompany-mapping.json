@@ -137,7 +137,7 @@
         "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
       },
-	    {
+      {
         "meteringPointIdFrom": "70705750001241000",
         "meteringPointIdTo": "70705750001260999",
         "companyName": "Glitre Energi Nett AS",
@@ -145,7 +145,7 @@
         "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
       },
-	  	{
+      {
         "meteringPointIdFrom": "70705750002336500",
         "meteringPointIdTo": "70705750002349999",
         "companyName": "Glitre Energi Nett AS",
@@ -153,7 +153,7 @@
         "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
       },
-	  	{
+      {
         "meteringPointIdFrom": "70705750008205000",
         "meteringPointIdTo": "70705750008216000",
         "companyName": "Glitre Energi Nett AS",
@@ -161,7 +161,7 @@
         "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
       },
-	  	{
+      {
         "meteringPointIdFrom": "70705750008231000",
         "meteringPointIdTo": "70705750008239999",
         "companyName": "Glitre Energi Nett AS",
@@ -176,6 +176,22 @@
         "companyOrgNo": "981915550",
         "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
+      },
+      {
+        "meteringPointIdFrom": "70705750008837000",
+        "meteringPointIdTo": "70705750008839999",
+        "companyName": "Lnett AS",
+        "companyOrgNo": "980038408",
+        "apiUrl": "https://api.l-nett.no/apis/t/prod.lyse.no/gta/api/1.0/tarifftype",
+        "userDocUrlOrEmail": "https://www.l-nett.no/tariff-api/"
+      },
+      {
+        "meteringPointIdFrom": "70705750006998000",
+        "meteringPointIdTo": "70705750007497999",
+        "companyName": "Lnett AS",
+        "companyOrgNo": "980038408",
+        "apiUrl": "https://api.l-nett.no/apis/t/prod.lyse.no/gta/api/1.0/tarifftype",
+        "userDocUrlOrEmail": "https://www.l-nett.no/tariff-api//"
       }
     ]
   }
