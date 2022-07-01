@@ -183,7 +183,7 @@
         "companyName": "Lnett AS",
         "companyOrgNo": "980038408",
         "apiUrl": "https://api.l-nett.no/apis/t/prod.lyse.no/gta/api/1.0/tarifftype",
-        "userDocUrlOrEmail": "https://www.l-nett.no/tariff-api/"
+        "userDocUrlOrEmail": "https://www.l-nett.no/nettleie/tariff-api/"
       },
       {
         "meteringPointIdFrom": "70705750006998000",
@@ -191,7 +191,7 @@
         "companyName": "Lnett AS",
         "companyOrgNo": "980038408",
         "apiUrl": "https://api.l-nett.no/apis/t/prod.lyse.no/gta/api/1.0/tarifftype",
-        "userDocUrlOrEmail": "https://www.l-nett.no/tariff-api//"
+        "userDocUrlOrEmail": "https://www.l-nett.no/nettleie/tariff-api/"
       }
     ]
   }
