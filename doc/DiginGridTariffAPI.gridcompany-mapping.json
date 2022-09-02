@@ -127,7 +127,7 @@
         "companyName": "AGDER ENERGI NETT AS",
         "companyOrgNo": "982974011",
         "apiUrl": "https://app.ae.no/api/gridtariff",
-        "userDocUrlOrEmail": ""
+        "userDocUrlOrEmail": "nett@ae.no"
       },
       {
         "meteringPointIdFrom": "70705750004571000",
