@@ -138,14 +138,6 @@
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
       },
       {
-        "meteringPointIdFrom": "70705750001221000",
-        "meteringPointIdTo": "70705750001260999",
-        "companyName": "Glitre Energi Nett AS",
-        "companyOrgNo": "981915550",
-        "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
-        "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
-      },
-      {
         "meteringPointIdFrom": "70705750002270000",
         "meteringPointIdTo": "70705750002349999",
         "companyName": "Glitre Energi Nett AS",
@@ -154,23 +146,23 @@
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
       },
       {
-        "meteringPointIdFrom": "70705750008191000",
-        "meteringPointIdTo": "70705750008216000",
+        "meteringPointIdFrom": "70705750001221000",
+        "meteringPointIdTo": "70705750001260999",
         "companyName": "Glitre Energi Nett AS",
         "companyOrgNo": "981915550",
         "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
       },
       {
-        "meteringPointIdFrom": "70705750008231000",
-        "meteringPointIdTo": "70705750008239999",
+        "meteringPointIdFrom": "70705750008191000",
+        "meteringPointIdTo": "70705750008215999",
         "companyName": "Glitre Energi Nett AS",
         "companyOrgNo": "981915550",
         "apiUrl": "https://apigw.glitreenergi-nett.no/api/nettleie-for-styring/",
         "userDocUrlOrEmail": "https://www.glitreenergi-nett.no/kunde/ny-nettleie/api-for-nettleiepriser/"
       },
-	  	{
-        "meteringPointIdFrom": "70705750008240000",
+      {
+        "meteringPointIdFrom": "70705750008220000",
         "meteringPointIdTo": "70705750008244999",
         "companyName": "Glitre Energi Nett AS",
         "companyOrgNo": "981915550",
