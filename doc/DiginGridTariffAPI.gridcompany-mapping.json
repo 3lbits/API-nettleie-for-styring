@@ -106,22 +106,6 @@
         "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
       },
       {
-        "meteringPointIdFrom": "70705750008054000",
-        "meteringPointIdTo": "70705750008079999",
-        "companyName": "Norgesnett AS",
-        "companyOrgNo": "980234088",
-        "apiUrl": "https://gridtariff-api.norgesnett.no",
-        "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
-      },
-      {
-        "meteringPointIdFrom": "70705750001690000",
-        "meteringPointIdTo": "70705750001779999",
-        "companyName": "Norgesnett AS",
-        "companyOrgNo": "980234088",
-        "apiUrl": "https://gridtariff-api.norgesnett.no",
-        "userDocUrlOrEmail": "https://norgesnett.no/kunde/ny-nettleie/api-for-nettleie-priser/"
-      },
-      {
         "meteringPointIdFrom": "70705750007619000",
         "meteringPointIdTo": "70705750008018999",
         "companyName": "AGDER ENERGI NETT AS",
@@ -184,6 +168,14 @@
         "companyOrgNo": "980038408",
         "apiUrl": "https://api.l-nett.no/apis/t/prod.lyse.no/gta/api/1.0/tarifftype",
         "userDocUrlOrEmail": "https://www.l-nett.no/nettleie/tariff-api/"
+      },
+      {
+        "meteringPointIdFrom": "70705750003971000",
+        "meteringPointIdTo": "70705750004479999",
+        "companyName": "Lede AS",
+        "companyOrgNo": "979422679",
+        "apiUrl": "https://elbits.infosynergi.no/",
+        "userDocUrlOrEmail": "benteinar.susaas@lede.no"
       }
     ]
   }

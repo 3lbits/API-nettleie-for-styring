@@ -1,4 +1,4 @@
-# DIGIN Nettariff API <br> Spesifikasjon
+# ELBITS Nettariff API <br> Spesifikasjon
 
 ## Dokumentversjoner
 |     Dato    |     Versjon    |     Endring       |
@@ -8,7 +8,7 @@
 |  01.12.21   |        1.0     | Offisiell versjon |
 
 ## 1. Bakgrunn
-DIGINprosjektet 'Nettariff API' jobber med utvikling av en standard for deling av nettariffdata med brukere og tredjepartsaktører i kraftsystemet. Det er ikke innenfor prosjektets mandat å standardisere hvilke nettariffmodeller som skal benyttes.
+DIGINprosjektet 'Nettariff API' jobbet med utvikling av en standard for deling av nettariffdata med brukere og tredjepartsaktører i kraftsystemet. Det var ikke innenfor prosjektets mandat å standardisere hvilke nettariffmodeller som skulle benyttes.
 <br/>
 Hensikten med APIet er å støtte styring ved hjelp av smarthusteknologi og dermed stimulere til økt utnyttelse av fleksibilitet fra sluttbrukere. APIet er ikke ment å brukes til å få et korrekt historisk datagrunnlag for sluttbrukeres nettariff.
 <br/>
@@ -20,9 +20,11 @@ Prosjektet leverer standardiserte skjema, med tilhørende dokumentasjon, for utv
 <br/>
 Denne versjonen av standard for 'Nettariff API' tar ikke hensyn til kunder med redusert elavgift. Disse kundene må selv sørge for å trekke fra sin reduksjon av elavgift for å få korrekte priser.
 <br/>
+Arbeidet i DIGIN er nå flyttet til ElBits AS. Se https://www.elbits.no for mer informasjon. Denne versjonen av standard for 'Nettariff API' tar ikke hensyn til kunder med redusert elavgift. Disse kundene må selv sørge for å trekke fra sin reduksjon av elavgift for å få korrekte priser.
+<br/>
 
 ## 2. Hensikt med dette dokumentet
-Dokumentasjon av beslutninger tatt i DIGINs prosjektgruppe for å lage et standard API for utveksling av Nettariff data for styring/smarthus. 
+Dokumentasjon for implementasjon av et "de facto" standard API for utveksling av Nettariff data for styring/smarthus. 
 
 ## 3. Definisjoner
 API - Application programming interface
@@ -88,23 +90,25 @@ Dette vil vise SWAGGER-dokumentasjon som vist i bildet under.
 
 
 ## 6. Implementasjon
-DIGIN leverer ikke en ferdig implementasjon av APIet. DIGIN leverer spesifikasjon for implementasjon.
+ElBits leverer ikke en ferdig implementasjon av APIet. ElBits leverer spesifikasjon for implementasjon.
 <br/>
 <br/>
 DiginGridTariffAPI.gridcompany-mapping.json
 <br/>
-Nettselskap som implementerer Nettariff API melder inn sine MPID-serier, navn på nettselskap, organisasjonsnummer, url til api og url til brukerdokumentasjon eller epost-adresse til DIGIN på epost-adresse digin@energinorge.no.
+Nettselskap som implementerer Nettariff API melder inn sine MPID-serier, navn på nettselskap, organisasjonsnummer, url til api og url til brukerdokumentasjon eller epost-adresse til ElBits på epost-adresse post@elbits.no.
 <br/>
 Filen inneholder mapping av MPID (fra - til), nettselskapsnavn, nettselskapets organisasjonsnummer, url til api og url til brukerdokumentasjon eller epost-adresse.
 <br/>
-https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json
+https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json
+<br/>
+Dersom du opplever at målepunkt-id´er som skulle vært i en range hos et nettselskap ikke returneres som forventet, så kan det sjekkes hvilket nettselskap et målepunkt-id tilhører ved å bruke Elhub sitt metering-points API-endepunkt. Se https://api.elhub.no/api/energy-data for mer informasjon. Dersom du har innspill til forbedringer på dette endepunktet for å dekke dine behov, ta kontakt med Elhub eller send en epost til post@elbits.no. 
 <br/>
 <br/>
 GridTariffAPI-3part-registration-and-use-of-api_v1_0.jpg
 <br/>
 Sekvensdiagram som beskriver rutine for 3.-parts registerering av bruker og utstedelse av api-key.
 <br/>
-https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/GridTariffAPI-3part-registration-and-use-of-api_v1_0.jpg
+https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/GridTariffAPI-3part-registration-and-use-of-api_v1_0.jpg 
 <br/>
 <br/>
 Spesifikasjonsfilene kan benyttes til å generere klient og service.<br/>
@@ -136,11 +140,11 @@ Samt nettselskapene eller leverandørene kan "hoste" implementasjonen på lokale
 <br/>
 Vi har derfor sett det vanskelig å spesifisere hvilken modell av sikkerhet som kan passe alle.
 <br/><br/>
-DIGIN kommer med følgende anbefalinger for implementering av GridTariffAPI:
+ElBits kommer med følgende anbefalinger for implementering av GridTariffAPI:
 <ul>
   <li>Enhver implementasjon bør sikres med autorisering og autentisering av innkommende forespørsler.
   <br/>
-  Hvordan dette gjøres er opp til hver nettselskap/leverandør, men det anbefales fra DIGIN at det anvendes:
+  Hvordan dette gjøres er opp til hver nettselskap/leverandør, men det anbefales fra ElBits at det anvendes:
   </br>
   <ul>
     <li>HTTPS</li>
@@ -221,7 +225,7 @@ Type: LS kunde < 100.000 kWh
 <br/>
 Nettnivå: LS DN
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_monthlymax_example1.json
+Link eksempel: https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_monthlymax_example1.json
 <br/>
 <br/>
 <br/>
@@ -231,7 +235,7 @@ Type: LS kunde < 100.000 kWh
 <br/>
 Nettnivå: LS DN
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_dailymax_example1.json
+Link eksempel: https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_dailymax_example1.json
 <br/>
 <br/>
 <br/>
@@ -241,7 +245,7 @@ Type: LS kunde < 100.000 kWh
 <br/>
 Nettnivå: LS DN
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_fusesize_example1.json
+Link eksempel: https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_fusesize_example1.json
 <br/>
 <br/>
 <br/>
@@ -251,7 +255,7 @@ Type: Tariff med effektledd.
 <br/>
 Nettnivå: LS DN
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_LSDN_example1.json
+Link eksempel: https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_LSDN_example1.json
 <br/>
 <br/>
 <br/>
@@ -261,7 +265,7 @@ Type: Tariff med effektledd.
 <br/>
 Nettnivå: LS DN
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_LSDN_example2.json
+Link eksempel: https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_LSDN_example2.json
 <br/>
 <br/>
 <br/>
@@ -271,18 +275,22 @@ Type: Tariff med effektledd.
 <br/>
 Nettnivå: HS DN
 <br/>
-Link eksempel: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_HSDN_example1.json
+Link eksempel: https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_output_HSDN_example1.json
 <br/>
 <br/>
 <br/>
 Eksempler input:
 <br/>
-Input with range parameter: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_input_example_range.json
+Input with range parameter: https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_input_example_range.json
 <br/>
-Input with startTime and endTime parameters: https://github.com/digin-energi/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_input_example_startTime_endTime.json
+Input with startTime and endTime parameters: https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.v1_0_meteringpointsgridtariffs_json_input_example_startTime_endTime.json
 <br/>
 
 ## 11. Endringslogg:
+21.12.2023: Dokumentasjon endret etter flytting fra DIGIN til ElBits:<br/>
+<ul>
+  <li> README: oppdatert etter flytting av github repo fra DIGIN-Energi til ElBits. DiginGridTariffAPI.gridcompany-mapping.json: lagt til informasjon om API hos Lede AS og fjernet duplikate oppføringer for Norgesnett.</li><br/>
+</ul>
 22.12.2021: Versjon 1.0.1:<br/>
 <ul>
   <li> DiginGridTariffAPI.v1_0: Lagt til input parameter Product(for internt bruk for nettselskap) som er Exclusive OR med TariffKey. TariffKey ikke lenger definert required.</li><br/>
